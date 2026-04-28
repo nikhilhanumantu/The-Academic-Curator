@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Create Your Profile | The Academic Curator</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-dim": "#5341ad",
+                        "on-secondary-container": "#5240ab",
+                        "secondary": "#5f4eba",
+                        "outline-variant": "#aeb3b6",
+                        "on-surface-variant": "#5a6063",
+                        "on-tertiary-fixed-variant": "#005565",
+                        "on-tertiary-container": "#004b59",
+                        "surface-variant": "#dee3e7",
+                        "inverse-surface": "#0c0f10",
+                        "primary-dim": "#004bbc",
+                        "outline": "#767b7f",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-fixed-variant": "#5c4ab6",
+                        "surface-container-high": "#e5e9ec",
+                        "tertiary-container": "#50dcff",
+                        "surface": "#f8f9fb",
+                        "on-secondary": "#fcf7ff",
+                        "on-primary-fixed-variant": "#003e9f",
+                        "on-error-container": "#65000b",
+                        "primary-fixed-dim": "#96b1ff",
+                        "on-tertiary": "#f0fbff",
+                        "tertiary-fixed-dim": "#3ccef0",
+                        "secondary-container": "#e5deff",
+                        "on-background": "#2e3336",
+                        "inverse-on-surface": "#9b9d9f",
+                        "tertiary-fixed": "#50dcff",
+                        "tertiary": "#00687c",
+                        "on-primary-fixed": "#002361",
+                        "error-dim": "#70030f",
+                        "surface-dim": "#d5dbdf",
+                        "error": "#ac3434",
+                        "inverse-primary": "#5c8bff",
+                        "surface-container-low": "#f2f4f6",
+                        "surface-tint": "#0f57d0",
+                        "surface-container-highest": "#dee3e7",
+                        "on-tertiary-fixed": "#003641",
+                        "on-primary": "#f9f8ff",
+                        "secondary-fixed-dim": "#d7ceff",
+                        "surface-container": "#ebeef1",
+                        "secondary-fixed": "#e5deff",
+                        "error-container": "#f56965",
+                        "on-error": "#fff7f6",
+                        "primary-container": "#aabfff",
+                        "surface-bright": "#f8f9fb",
+                        "on-surface": "#2e3336",
+                        "primary": "#0f57d0",
+                        "background": "#f8f9fb",
+                        "on-primary-container": "#00368d",
+                        "tertiary-dim": "#005b6d",
+                        "primary-fixed": "#aabfff",
+                        "on-secondary-fixed": "#3f2b98"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .font-manrope { font-family: 'Manrope', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-background min-h-screen">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 flex justify-between items-center px-8 h-16 bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl shadow-sm dark:shadow-none">
+<div class="text-2xl font-bold tracking-tighter text-blue-700 dark:text-blue-400 font-manrope">
+            The Academic Curator
+        </div>
+<div class="hidden md:flex items-center space-x-8">
+<a class="font-manrope font-semibold tracking-tight text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-300 transition-colors" href="#">Discover</a>
+<a class="font-manrope font-semibold tracking-tight text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-300 transition-colors" href="#">Showcase</a>
+<a class="font-manrope font-semibold tracking-tight text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-300 transition-colors" href="#">Resources</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="bg-primary text-on-primary px-6 py-2 rounded-lg font-manrope font-semibold transition-transform active:scale-95 duration-200">
+                Sign In
+            </button>
+</div>
+</nav>
+<main class="pt-24 pb-20 px-6 max-w-6xl mx-auto">
+<!-- Profile Creation Stepper Wrapper -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+<!-- Left Column: Stepper Indicators -->
+<div class="lg:col-span-4 space-y-8">
+<div class="p-8 bg-surface-container-lowest rounded-xl">
+<h1 class="text-3xl font-manrope font-extrabold tracking-tight text-on-surface mb-2">Build Your Exhibit</h1>
+<p class="text-on-surface-variant text-sm mb-10 leading-relaxed">Let's curate your professional narrative. Each step defines a layer of your academic and creative journey.</p>
+<div class="space-y-6 relative">
+<!-- Connecting Line -->
+<div class="absolute left-[19px] top-4 bottom-4 w-0.5 bg-surface-container-high"></div>
+<!-- Step 1: Active -->
+<div class="flex items-center gap-4 relative">
+<div class="w-10 h-10 rounded-full bg-primary text-on-primary flex items-center justify-center z-10 shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined text-sm">person</span>
+</div>
+<div>
+<p class="text-primary font-bold text-sm font-manrope">Personal Info</p>
+<p class="text-on-surface-variant text-xs">Identity &amp; Bio</p>
+</div>
+</div>
+<!-- Step 2 -->
+<div class="flex items-center gap-4 relative">
+<div class="w-10 h-10 rounded-full bg-surface-container-high text-on-surface-variant flex items-center justify-center z-10">
+<span class="material-symbols-outlined text-sm">psychology</span>
+</div>
+<div>
+<p class="text-on-surface-variant font-bold text-sm font-manrope">Expertise</p>
+<p class="text-on-surface-variant text-xs">Skills &amp; Interests</p>
+</div>
+</div>
+<!-- Step 3 -->
+<div class="flex items-center gap-4 relative">
+<div class="w-10 h-10 rounded-full bg-surface-container-high text-on-surface-variant flex items-center justify-center z-10">
+<span class="material-symbols-outlined text-sm">palette</span>
+</div>
+<div>
+<p class="text-on-surface-variant font-bold text-sm font-manrope">Project Gallery</p>
+<p class="text-on-surface-variant text-xs">Work &amp; Research</p>
+</div>
+</div>
+<!-- Step 4 -->
+<div class="flex items-center gap-4 relative">
+<div class="w-10 h-10 rounded-full bg-surface-container-high text-on-surface-variant flex items-center justify-center z-10">
+<span class="material-symbols-outlined text-sm">verified</span>
+</div>
+<div>
+<p class="text-on-surface-variant font-bold text-sm font-manrope">Credentials</p>
+<p class="text-on-surface-variant text-xs">Certificates</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Guidance Card -->
+<div class="p-6 bg-secondary-container rounded-xl overflow-hidden relative">
+<div class="relative z-10">
+<span class="material-symbols-outlined text-secondary text-4xl mb-4">lightbulb</span>
+<h3 class="text-secondary font-bold text-lg font-manrope mb-2">Curator's Tip</h3>
+<p class="text-on-secondary-container text-sm leading-relaxed">
+                            Think of your bio as an executive summary. Keep it focused on your unique perspective rather than just listing tasks.
+                        </p>
+</div>
+<!-- Background Decoration -->
+<div class="absolute -bottom-8 -right-8 w-32 h-32 bg-secondary opacity-10 rounded-full blur-2xl"></div>
+</div>
+</div>
+<!-- Right Column: Content Canvas -->
+<div class="lg:col-span-8 space-y-8">
+<!-- Section 1: Personal Info -->
+<div class="bg-surface-container-lowest p-8 rounded-xl transition-all border border-outline-variant/10">
+<div class="flex items-center justify-between mb-8">
+<h2 class="text-2xl font-manrope font-bold text-on-surface">Step 1: The Foundation</h2>
+<span class="text-xs font-bold font-label tracking-widest text-primary-dim bg-primary-container/20 px-3 py-1 rounded-full">DRAFT</span>
+</div>
+<div class="space-y-6">
+<!-- Photo Upload Placeholder -->
+<div class="flex items-center gap-6 p-6 bg-surface-container-low rounded-xl border-2 border-dashed border-outline-variant/20">
+<div class="w-24 h-24 rounded-full bg-surface-container-highest flex items-center justify-center overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="professional headshot of a smiling young student in a bright studio setting with soft lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCtlZTgulRF9usLwFxe-k_1SJH1GgsSEDQwmXXy1wxtd8FOYnYYWtzudFZRfPvmw9wkDn5we5c1FvqXPYrBbjeTc23F9HLlTtSIG_8s_rpOIT3-vrQn-L26VKaZYPEUz6pQ87Tu6YO7Ro1hM5Ck1CBi9ZPDKdTS-CEAqvpVvRRelKm1WDmpE0vJs-0FI-VfT_YqtevyEtj4y06JH3qThf7qkwpeCOVMQsL0UzVQD1LxU4VHPZP9AlqrqFYzxACAaCVe93jziGQiRzk"/>
+</div>
+<div>
+<h4 class="font-manrope font-bold text-on-surface">Profile Avatar</h4>
+<p class="text-xs text-on-surface-variant mb-3">JPG, PNG or SVG. Max 5MB.</p>
+<button class="text-sm font-bold text-primary hover:underline">Change Photo</button>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="space-y-2">
+<label class="text-xs font-bold text-on-surface-variant uppercase tracking-wider">Full Name</label>
+<input class="w-full bg-surface-container-highest border-none rounded-xl p-4 focus:ring-2 focus:ring-primary/30 transition-all font-body text-on-surface" placeholder="e.g. Alex Rivers" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="text-xs font-bold text-on-surface-variant uppercase tracking-wider">Major / Field</label>
+<input class="w-full bg-surface-container-highest border-none rounded-xl p-4 focus:ring-2 focus:ring-primary/30 transition-all font-body text-on-surface" placeholder="e.g. Graduate Product Designer" type="text"/>
+</div>
+</div>
+<div class="space-y-2">
+<label class="text-xs font-bold text-on-surface-variant uppercase tracking-wider">Your Story (Bio)</label>
+<textarea class="w-full bg-surface-container-highest border-none rounded-xl p-4 focus:ring-2 focus:ring-primary/30 transition-all font-body text-on-surface" placeholder="Briefly describe your academic focus and career aspirations..." rows="4"></textarea>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4">
+<div class="space-y-2">
+<label class="text-xs font-bold text-on-surface-variant uppercase tracking-wider">Contact Email</label>
+<input class="w-full bg-surface-container-highest border-none rounded-xl p-4 focus:ring-2 focus:ring-primary/30 transition-all font-body text-on-surface" placeholder="alex.rivers@university.edu" type="email"/>
+</div>
+<div class="space-y-2">
+<label class="text-xs font-bold text-on-surface-variant uppercase tracking-wider">Portfolio Link</label>
+<input class="w-full bg-surface-container-highest border-none rounded-xl p-4 focus:ring-2 focus:ring-primary/30 transition-all font-body text-on-surface" placeholder="www.alexrivers.design" type="text"/>
+</div>
+</div>
+</div>
+</div>
+<!-- Section 2: Skills (Tag Based) -->
+<div class="bg-surface-container-lowest p-8 rounded-xl border border-outline-variant/10">
+<h2 class="text-2xl font-manrope font-bold text-on-surface mb-6">Step 2: Expertise Palette</h2>
+<div class="space-y-6">
+<div class="space-y-2">
+<label class="text-xs font-bold text-on-surface-variant uppercase tracking-wider">Core Skills</label>
+<div class="w-full bg-surface-container-highest rounded-xl p-2 min-h-[120px] flex flex-wrap gap-2 items-start content-start">
+<span class="bg-primary text-on-primary text-xs font-bold px-4 py-2 rounded-full flex items-center gap-2">
+                                    UI/UX Design <span class="material-symbols-outlined text-[14px] cursor-pointer">close</span>
+</span>
+<span class="bg-primary text-on-primary text-xs font-bold px-4 py-2 rounded-full flex items-center gap-2">
+                                    Figma <span class="material-symbols-outlined text-[14px] cursor-pointer">close</span>
+</span>
+<span class="bg-primary text-on-primary text-xs font-bold px-4 py-2 rounded-full flex items-center gap-2">
+                                    User Research <span class="material-symbols-outlined text-[14px] cursor-pointer">close</span>
+</span>
+<input class="bg-transparent border-none focus:ring-0 text-sm py-2 px-3" placeholder="Add more..." type="text"/>
+</div>
+</div>
+<div class="flex flex-wrap gap-2">
+<span class="text-xs text-on-surface-variant py-2">Suggested:</span>
+<button class="bg-surface-container-high hover:bg-primary/10 hover:text-primary transition-all text-xs font-semibold px-3 py-1.5 rounded-full">Visual Communication</button>
+<button class="bg-surface-container-high hover:bg-primary/10 hover:text-primary transition-all text-xs font-semibold px-3 py-1.5 rounded-full">Python</button>
+<button class="bg-surface-container-high hover:bg-primary/10 hover:text-primary transition-all text-xs font-semibold px-3 py-1.5 rounded-full">Prototyping</button>
+</div>
+</div>
+</div>
+<!-- Section 3: Project Preview (The Gallery) -->
+<div class="bg-surface-container-lowest p-8 rounded-xl border border-outline-variant/10">
+<div class="flex justify-between items-center mb-8">
+<h2 class="text-2xl font-manrope font-bold text-on-surface">Step 3: Project Gallery</h2>
+<button class="bg-surface-container-high text-primary font-bold text-sm px-5 py-2 rounded-lg hover:bg-primary/5 transition-all flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">add</span> New Project
+                        </button>
+</div>
+<!-- Asymmetric Project List -->
+<div class="space-y-6">
+<!-- Project Card 1 -->
+<div class="group relative bg-surface p-1 rounded-2xl overflow-hidden hover:scale-[1.01] transition-transform duration-300">
+<div class="flex flex-col md:flex-row gap-6 p-6 bg-surface-container-lowest rounded-2xl">
+<div class="w-full md:w-48 h-32 rounded-xl overflow-hidden bg-surface-container-highest shrink-0">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="modern mobile app interface showing a fitness tracking dashboard with vibrant gradients and glass cards" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAlcZBlid2Xw2Cg7iVsMfTZTFWaPzgYfg38XLOGUvSm4RTxwBGPobWUycMoIc-oZWzMXlctHl3ceDb3pYM2xpNWtF2jffUSHNZ32b5hwZsuSq7piEgdYrKnDX4k-yxUJYgJVkT5clycqNN9aWQvA6DK155hsBUBxUugz16nWc36nO3b6qFN12PPvKWhSNWy7ld0a92J7AQNhxTVfp0gWgb8cUqYQOGxw3vRQ_QGKiH7DzgmfBR0gJiFklb82QguRPBQXjUBWSQohHs"/>
+</div>
+<div class="flex-1 space-y-2">
+<h4 class="text-lg font-manrope font-bold text-on-surface">Strive Fitness Mobile App</h4>
+<p class="text-sm text-on-surface-variant line-clamp-2">A comprehensive mobile solution focusing on mental well-being and daily workout tracking for students.</p>
+<div class="flex gap-2 pt-2">
+<span class="text-[10px] uppercase tracking-widest font-bold px-2 py-1 bg-secondary-container text-secondary rounded">UI Design</span>
+<span class="text-[10px] uppercase tracking-widest font-bold px-2 py-1 bg-tertiary-container text-tertiary rounded">React Native</span>
+</div>
+</div>
+<div class="flex flex-col gap-2 justify-center">
+<button class="p-2 text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined">edit</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:text-error transition-colors">
+<span class="material-symbols-outlined">delete</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Project Card 2 -->
+<div class="group relative bg-surface p-1 rounded-2xl overflow-hidden hover:scale-[1.01] transition-transform duration-300">
+<div class="flex flex-col md:flex-row gap-6 p-6 bg-surface-container-lowest rounded-2xl">
+<div class="w-full md:w-48 h-32 rounded-xl overflow-hidden bg-surface-container-highest shrink-0">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="clean minimalist web architecture diagram on a dark blueprint background with blue neon highlights" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDM4vsdY1hNYZYSIcsby7YnvfTPBkiB5ovNlZ37GL_N4dW5odGtOMMFPdUEgAYVXIQjBFfWfhrijQvjBqKS2r6DlTUONtGtLA8kf9M4iaqwSOzIeAeIyPzAqC3GiQrQwMHheC32z2vTy1YzLPYhi1V8daBcZNtdKEvHJlAhEiqDuBEMHVpoCpVSLoXIa9EGgHU80a_D9VSjz-3akLtccX9BTcU5dZb2nZ69W5qlpeMMvIMHMqs4QYPoQpkO_3av-rWqO_BoMehadn4"/>
+</div>
+<div class="flex-1 space-y-2">
+<h4 class="text-lg font-manrope font-bold text-on-surface">DataFlow Analytics Tool</h4>
+<p class="text-sm text-on-surface-variant line-clamp-2">Redesigning the data visualization dashboard for complex academic research datasets.</p>
+<div class="flex gap-2 pt-2">
+<span class="text-[10px] uppercase tracking-widest font-bold px-2 py-1 bg-secondary-container text-secondary rounded">UX Research</span>
+<span class="text-[10px] uppercase tracking-widest font-bold px-2 py-1 bg-tertiary-container text-tertiary rounded">D3.js</span>
+</div>
+</div>
+<div class="flex flex-col gap-2 justify-center">
+<button class="p-2 text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined">edit</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:text-error transition-colors">
+<span class="material-symbols-outlined">delete</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Navigation Controls -->
+<div class="flex items-center justify-between pt-4">
+<button class="text-on-surface-variant font-manrope font-bold hover:text-on-surface transition-colors">Save Draft</button>
+<div class="flex gap-4">
+<button class="px-8 py-3 rounded-xl font-manrope font-bold text-on-surface-variant hover:bg-surface-container-high transition-all">Back</button>
+<button class="bg-primary text-on-primary px-10 py-3 rounded-xl font-manrope font-bold shadow-lg shadow-primary/20 hover:shadow-xl hover:-translate-y-0.5 active:translate-y-0 transition-all">
+                            Complete Profile
+                        </button>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full py-12 px-8 flex flex-col md:flex-row justify-between items-center gap-4 bg-slate-50 dark:bg-slate-950">
+<div class="text-lg font-bold text-slate-900 dark:text-slate-100">The Academic Curator</div>
+<div class="font-inter text-xs text-slate-500">© 2025 The Academic Curator. Built for the next generation of talent.</div>
+<div class="flex gap-6">
+<a class="font-inter text-xs text-slate-500 hover:underline" href="#">Privacy Policy</a>
+<a class="font-inter text-xs text-slate-500 hover:underline" href="#">Terms of Service</a>
+<a class="font-inter text-xs text-slate-500 hover:underline" href="#">Contact</a>
+<a class="font-inter text-xs text-slate-500 hover:underline" href="#">FAQ</a>
+</div>
+</footer>
+</body></html>

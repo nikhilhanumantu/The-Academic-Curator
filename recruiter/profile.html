@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary": "#9e1e9b",
+                    "tertiary-fixed": "#ff82f4",
+                    "inverse-on-surface": "#9b9d9f",
+                    "secondary-container": "#71eff7",
+                    "on-background": "#2c2f31",
+                    "on-tertiary": "#ffeef8",
+                    "tertiary-fixed-dim": "#f370ea",
+                    "on-error-container": "#570008",
+                    "primary-fixed-dim": "#618eff",
+                    "on-primary-fixed-variant": "#00276b",
+                    "on-secondary": "#cafcff",
+                    "tertiary-container": "#ff82f4",
+                    "surface": "#f5f6f8",
+                    "surface-container-high": "#e0e3e5",
+                    "on-secondary-fixed-variant": "#006267",
+                    "surface-container-lowest": "#ffffff",
+                    "outline": "#757779",
+                    "on-tertiary-container": "#5c005b",
+                    "surface-variant": "#dadde0",
+                    "primary-dim": "#0048b5",
+                    "inverse-surface": "#0c0f10",
+                    "on-tertiary-fixed-variant": "#6a006a",
+                    "on-surface-variant": "#595c5e",
+                    "outline-variant": "#abadaf",
+                    "secondary-dim": "#00595d",
+                    "on-secondary-container": "#00575c",
+                    "secondary": "#00666b",
+                    "on-secondary-fixed": "#004346",
+                    "primary-fixed": "#789dff",
+                    "tertiary-dim": "#8f068e",
+                    "background": "#f5f6f8",
+                    "on-primary-container": "#001f57",
+                    "primary": "#0253cd",
+                    "on-surface": "#2c2f31",
+                    "on-error": "#ffefee",
+                    "primary-container": "#789dff",
+                    "surface-bright": "#f5f6f8",
+                    "error-container": "#fb5151",
+                    "on-primary": "#f1f2ff",
+                    "secondary-fixed-dim": "#61e1e9",
+                    "surface-container": "#e6e8eb",
+                    "secondary-fixed": "#71eff7",
+                    "on-tertiary-fixed": "#320032",
+                    "surface-tint": "#0253cd",
+                    "surface-container-highest": "#dadde0",
+                    "inverse-primary": "#5c8bff",
+                    "surface-container-low": "#eff1f3",
+                    "error": "#b31b25",
+                    "surface-dim": "#d1d5d8",
+                    "on-primary-fixed": "#000000",
+                    "error-dim": "#9f0519"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Manrope"],
+                    "body": ["Manrope"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .aurora-gradient {
+            background: linear-gradient(135deg, #FF7AF5 0%, #7AF7FF 50%, #B4FF9F 100%);
+        }
+        .aurora-text {
+            background: linear-gradient(135deg, #FF7AF5 0%, #7AF7FF 50%, #B4FF9F 100%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body selection:bg-secondary-container">
+<!-- SideNavBar (Authority: JSON + Design System) -->
+<aside class="h-screen w-64 fixed left-0 top-0 bg-[#eff1f3] dark:bg-slate-900 flex flex-col py-8 px-4 z-50">
+<div class="mb-12 px-2">
+<h1 class="text-xl font-bold font-manrope text-slate-800 dark:text-slate-100 tracking-tighter">The Curator</h1>
+<p class="text-[10px] uppercase tracking-[0.2em] text-on-surface-variant font-semibold">Recruiter Portal</p>
+</div>
+<nav class="flex-1 space-y-2">
+<!-- Active Tab: Dashboard -->
+<a class="flex items-center gap-3 px-4 py-3 text-[#0253cd] dark:text-cyan-400 font-bold border-r-4 border-[#0253cd] font-manrope tracking-tight text-sm hover:bg-white/50 dark:hover:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span>Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-[#595c5e] dark:text-slate-400 hover:text-slate-900 font-manrope tracking-tight text-sm hover:bg-white/50 dark:hover:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+<span>Search Talent</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-[#595c5e] dark:text-slate-400 hover:text-slate-900 font-manrope tracking-tight text-sm hover:bg-white/50 dark:hover:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="bookmark">bookmark</span>
+<span>Saved Candidates</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-[#595c5e] dark:text-slate-400 hover:text-slate-900 font-manrope tracking-tight text-sm hover:bg-white/50 dark:hover:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="chat">chat</span>
+<span>Chat</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-[#595c5e] dark:text-slate-400 hover:text-slate-900 font-manrope tracking-tight text-sm hover:bg-white/50 dark:hover:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span>Settings</span>
+</a>
+</nav>
+<div class="mt-auto px-2">
+<button class="w-full aurora-gradient text-on-primary font-bold py-3 px-4 rounded-xl shadow-lg shadow-primary/20 flex items-center justify-center gap-2 transition-transform active:scale-95">
+<span class="material-symbols-outlined text-sm" data-icon="add">add</span>
+<span class="text-sm">Post a Role</span>
+</button>
+</div>
+</aside>
+<!-- TopNavBar (Authority: JSON + Design System) -->
+<header class="fixed top-0 right-0 w-[calc(100%-16rem)] h-16 z-40 bg-[#f5f6f8]/70 dark:bg-slate-950/70 backdrop-blur-xl flex justify-between items-center px-8">
+<div class="flex items-center flex-1">
+<div class="relative w-full max-w-md group">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-sm">search</span>
+<input class="w-full bg-surface-container-low border-none rounded-full py-2 pl-10 pr-4 text-sm font-label focus:ring-2 ring-secondary-container transition-all placeholder:text-outline-variant" placeholder="Search across talent pool..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="hover:bg-white/20 dark:hover:bg-slate-800 rounded-full p-2 transition-all text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="hover:bg-white/20 dark:hover:bg-slate-800 rounded-full p-2 transition-all text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</button>
+<div class="h-8 w-px bg-outline-variant/20 mx-2"></div>
+<div class="flex items-center gap-3 pl-2">
+<div class="text-right">
+<p class="text-xs font-bold text-on-surface leading-tight">Sarah Jenkins</p>
+<p class="text-[10px] text-on-surface-variant font-label">Senior Recruiter</p>
+</div>
+<img alt="Recruiter Profile" class="w-10 h-10 rounded-full border-2 border-white shadow-sm object-cover" data-alt="professional headshot of a woman recruiter in a modern office with natural light and soft background blur" src="https://lh3.googleusercontent.com/aida-public/AB6AXuACR6ADF81dgYvylOGq6zm-eG-17Jp5E5fRVsrSt5uQH0Llvsa_aZiPTSGU1WpESNLZvMcIxWuhid8sq4VUZRD2QbcsyNyfylBcO8KnJbTen8EIYgkN5npgb4j-6ge1MYIfXtfjMteB6cWZwLbNTQtTQa4jx55NfBARsOn3k0GChIaPqoTJ5jjWAyjPh9iXTZ0tzWy85Ml6AC-0LyEz0tDsp79i89bggzCL9taGu287R90ZC3IGlOrHDo2qI6ckX_NNd4G7nxJ--Jo"/>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="ml-64 pt-16 min-h-screen p-8">
+<div class="max-w-7xl mx-auto space-y-8">
+<!-- Hero Header -->
+<section class="flex flex-col gap-1">
+<h2 class="text-4xl font-extrabold tracking-tighter text-on-surface">Welcome back, Sarah.</h2>
+<p class="text-on-surface-variant font-medium">You have <span class="text-primary font-bold">12 new applicants</span> for the Senior UI Designer role today.</p>
+</section>
+<!-- Metrics: Bento Glassmorphism Cards -->
+<section class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="glass-card p-6 rounded-xl border border-white/40 shadow-sm relative overflow-hidden group">
+<div class="absolute -right-4 -top-4 w-24 h-24 aurora-gradient opacity-10 rounded-full blur-2xl group-hover:opacity-20 transition-opacity"></div>
+<div class="flex items-center justify-between mb-4">
+<span class="material-symbols-outlined text-primary bg-primary/10 p-2 rounded-lg" data-icon="visibility">visibility</span>
+<span class="text-[10px] font-bold text-primary px-2 py-1 bg-primary/5 rounded-full">+14% vs LW</span>
+</div>
+<p class="text-on-surface-variant font-label text-xs uppercase tracking-wider font-semibold">Total Candidates Viewed</p>
+<h3 class="text-3xl font-black mt-1 text-on-surface">1,284</h3>
+</div>
+<div class="glass-card p-6 rounded-xl border border-white/40 shadow-sm relative overflow-hidden group">
+<div class="absolute -right-4 -top-4 w-24 h-24 aurora-gradient opacity-10 rounded-full blur-2xl group-hover:opacity-20 transition-opacity"></div>
+<div class="flex items-center justify-between mb-4">
+<span class="material-symbols-outlined text-secondary bg-secondary/10 p-2 rounded-lg" data-icon="bookmark">bookmark</span>
+<span class="text-[10px] font-bold text-secondary px-2 py-1 bg-secondary/5 rounded-full">Steady</span>
+</div>
+<p class="text-on-surface-variant font-label text-xs uppercase tracking-wider font-semibold">Saved Candidates</p>
+<h3 class="text-3xl font-black mt-1 text-on-surface">412</h3>
+</div>
+<div class="glass-card p-6 rounded-xl border border-white/40 shadow-sm relative overflow-hidden group">
+<div class="absolute -right-4 -top-4 w-24 h-24 aurora-gradient opacity-10 rounded-full blur-2xl group-hover:opacity-20 transition-opacity"></div>
+<div class="flex items-center justify-between mb-4">
+<span class="material-symbols-outlined text-tertiary bg-tertiary/10 p-2 rounded-lg" data-icon="chat_bubble">chat_bubble</span>
+<span class="text-[10px] font-bold text-tertiary px-2 py-1 bg-tertiary/5 rounded-full">New Messages</span>
+</div>
+<p class="text-on-surface-variant font-label text-xs uppercase tracking-wider font-semibold">Active Chats</p>
+<h3 class="text-3xl font-black mt-1 text-on-surface">28</h3>
+</div>
+</section>
+<!-- Main Grid: Activity & Featured Candidates -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+<!-- Recent Activity Section -->
+<section class="lg:col-span-8 bg-surface-container-lowest rounded-xl p-8 shadow-[0px_12px_32px_rgba(44,47,49,0.04)]">
+<div class="flex items-center justify-between mb-8">
+<h4 class="text-xl font-bold tracking-tight">Recent Activity</h4>
+<button class="text-primary text-xs font-bold hover:underline">View All</button>
+</div>
+<div class="space-y-6">
+<!-- Activity Item 1 -->
+<div class="flex items-center gap-4 group cursor-pointer">
+<div class="relative">
+<img alt="Candidate" class="w-12 h-12 rounded-full object-cover" data-alt="portrait of a young professional man in a clean studio setting with neutral background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAX2HZ3ULUh5MOD3z8kZxO9GpOq9sieHXQQrk92g6sdskYHJWopJpzQ4LUzPjjYAkkzmKXy4UlkDFp_2oqnHMMPhN1ZZmA-4W1cr25-GDaymitqip6lOsv2rXDDm-T4IKHF1FssD2pPEHU494B_eMXdgdKMQvumpNkny8z0OOEHR3vb05WKvvz7KHhSTl2UNjqrkDAxYC3m2v4xUD9CXxWDgFwSHFfQH6RqDH3Qr5Gog_bA02DkV81Imh90VkXYf-UaeA9DgtU-_-g"/>
+<div class="absolute -bottom-1 -right-1 w-4 h-4 bg-secondary-container border-2 border-white rounded-full"></div>
+</div>
+<div class="flex-1 border-b border-surface-container pb-4 group-last:border-none">
+<div class="flex justify-between items-start">
+<div>
+<p class="text-sm font-bold text-on-surface">Alex Rivera <span class="font-normal text-on-surface-variant">applied for</span> Senior Product Designer</p>
+<p class="text-xs text-outline font-label mt-1">2 hours ago • Portfolio attached</p>
+</div>
+<span class="px-3 py-1 bg-surface-container-high rounded-full text-[10px] font-bold uppercase tracking-tight">Review</span>
+</div>
+</div>
+</div>
+<!-- Activity Item 2 -->
+<div class="flex items-center gap-4 group cursor-pointer">
+<div class="relative">
+<img alt="Candidate" class="w-12 h-12 rounded-full object-cover" data-alt="portrait of a smiling woman with glasses in a minimalist professional environment" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCBpSjbN4V3_RYQbu5ArhBgqXChJQLWMbfbe-s4dt41bPibA4T_ng2hAfc_sQy-FM-ZkQDqO--sVpxN2Cz1UxVegEBgGhrLLodGXyKAgTkzAPgFCrS5Ml7m44LzS7npSsMiGolygVYfXnAwX7U6E2DCzO-fgPVVxKDulFMQ8HgVq7tlggZ6lIzTTSTIESP1EFJPZoXXSfh4fYzhTm-sqBTxTFtsern7q2RO9AnNuRDWFIFn0A_q5ORsBHbFF_xFXIErdorjTEYsC7s"/>
+<div class="absolute -bottom-1 -right-1 w-4 h-4 bg-tertiary-fixed-dim border-2 border-white rounded-full animate-pulse"></div>
+</div>
+<div class="flex-1 border-b border-surface-container pb-4 group-last:border-none">
+<div class="flex justify-between items-start">
+<div>
+<p class="text-sm font-bold text-on-surface">Sophie Chen <span class="font-normal text-on-surface-variant">responded to your interview request</span></p>
+<p class="text-xs text-outline font-label mt-1">5 hours ago • Engineering Manager</p>
+</div>
+<span class="px-3 py-1 bg-secondary-container/20 text-secondary text-[10px] font-bold uppercase tracking-tight">Messaging</span>
+</div>
+</div>
+</div>
+<!-- Activity Item 3 -->
+<div class="flex items-center gap-4 group cursor-pointer">
+<div class="w-12 h-12 rounded-full bg-primary/5 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary" data-icon="upload_file">upload_file</span>
+</div>
+<div class="flex-1 border-b border-surface-container pb-4 group-last:border-none">
+<div class="flex justify-between items-start">
+<div>
+<p class="text-sm font-bold text-on-surface">Bulk Import Complete</p>
+<p class="text-xs text-outline font-label mt-1">Yesterday • 142 candidates added from LinkedIn</p>
+</div>
+<span class="px-3 py-1 bg-surface-container-high rounded-full text-[10px] font-bold uppercase tracking-tight">Done</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Sidebar: Featured Talent / Suggestions -->
+<section class="lg:col-span-4 space-y-6">
+<div class="bg-inverse-surface text-white rounded-xl p-6 relative overflow-hidden">
+<div class="absolute right-0 top-0 w-32 h-32 aurora-gradient opacity-20 blur-3xl"></div>
+<h5 class="text-lg font-bold mb-2">Curator's Tip</h5>
+<p class="text-sm text-on-surface-variant leading-relaxed mb-4">Based on your recent hires, we found 3 designers with strong <b>Interaction Design</b> skills who are open to work.</p>
+<button class="w-full py-2 border border-white/20 rounded-lg text-xs font-bold hover:bg-white/10 transition-colors">View Talent Match</button>
+</div>
+<div class="bg-surface-container-low rounded-xl p-6">
+<h5 class="text-sm font-bold mb-4 uppercase tracking-widest text-on-surface-variant">Top Performers</h5>
+<div class="space-y-4">
+<div class="flex items-center gap-3">
+<div class="w-2 h-2 rounded-full aurora-gradient"></div>
+<div class="flex-1">
+<p class="text-xs font-bold">Liam Peterson</p>
+<p class="text-[10px] text-outline font-label">98% Match Score</p>
+</div>
+<span class="material-symbols-outlined text-sm text-outline cursor-pointer hover:text-primary">open_in_new</span>
+</div>
+<div class="flex items-center gap-3">
+<div class="w-2 h-2 rounded-full bg-secondary-container"></div>
+<div class="flex-1">
+<p class="text-xs font-bold">Elena Rodriguez</p>
+<p class="text-[10px] text-outline font-label">94% Match Score</p>
+</div>
+<span class="material-symbols-outlined text-sm text-outline cursor-pointer hover:text-primary">open_in_new</span>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- Dashboard Footer/Table Style Section -->
+<section class="bg-surface-container-lowest rounded-xl p-8 shadow-sm">
+<div class="flex items-center justify-between mb-8">
+<h4 class="text-xl font-bold tracking-tight">Active Pipelines</h4>
+<div class="flex gap-2">
+<button class="px-4 py-2 bg-surface-container text-xs font-bold rounded-lg hover:bg-surface-container-high transition-colors">By Date</button>
+<button class="px-4 py-2 bg-primary text-white text-xs font-bold rounded-lg shadow-sm">All Roles</button>
+</div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead>
+<tr class="text-[10px] uppercase tracking-widest text-on-surface-variant font-black border-b border-surface-container">
+<th class="pb-4 font-bold">Role Name</th>
+<th class="pb-4 font-bold">Total Applicants</th>
+<th class="pb-4 font-bold">Under Review</th>
+<th class="pb-4 font-bold">Interviewing</th>
+<th class="pb-4 font-bold text-right">Status</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container/50">
+<tr class="group hover:bg-surface-container-low/50 transition-colors">
+<td class="py-4">
+<div class="flex flex-col">
+<span class="text-sm font-bold text-primary group-hover:underline cursor-pointer">Lead Frontend Engineer</span>
+<span class="text-[10px] text-outline font-label">Engineering • San Francisco</span>
+</div>
+</td>
+<td class="py-4 text-sm font-medium">84</td>
+<td class="py-4 text-sm font-medium">12</td>
+<td class="py-4">
+<div class="flex -space-x-2">
+<div class="w-6 h-6 rounded-full border-2 border-white bg-slate-200"></div>
+<div class="w-6 h-6 rounded-full border-2 border-white bg-slate-300"></div>
+<div class="w-6 h-6 rounded-full border-2 border-white bg-slate-400"></div>
+<div class="w-6 h-6 rounded-full border-2 border-white bg-surface-container text-[8px] flex items-center justify-center font-bold">+2</div>
+</div>
+</td>
+<td class="py-4 text-right">
+<span class="px-2 py-1 bg-secondary-container/20 text-secondary text-[10px] font-bold rounded-full">ACTIVE</span>
+</td>
+</tr>
+<tr class="group hover:bg-surface-container-low/50 transition-colors">
+<td class="py-4">
+<div class="flex flex-col">
+<span class="text-sm font-bold text-primary group-hover:underline cursor-pointer">Senior UX Researcher</span>
+<span class="text-[10px] text-outline font-label">Product • Remote</span>
+</div>
+</td>
+<td class="py-4 text-sm font-medium">42</td>
+<td class="py-4 text-sm font-medium">4</td>
+<td class="py-4">
+<div class="flex -space-x-2">
+<div class="w-6 h-6 rounded-full border-2 border-white bg-slate-200"></div>
+<div class="w-6 h-6 rounded-full border-2 border-white bg-slate-300"></div>
+</div>
+</td>
+<td class="py-4 text-right">
+<span class="px-2 py-1 bg-secondary-container/20 text-secondary text-[10px] font-bold rounded-full">ACTIVE</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</div>
+</main>
+<!-- Contextual FAB (Restricted to Dashboard per instructions) -->
+<button class="fixed bottom-8 right-8 aurora-gradient text-on-primary w-14 h-14 rounded-full shadow-2xl flex items-center justify-center transition-transform hover:scale-110 active:scale-95 group z-50">
+<span class="material-symbols-outlined" data-icon="add_circle">add_circle</span>
+<span class="absolute right-full mr-4 bg-on-background text-white text-[10px] px-3 py-2 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap font-bold pointer-events-none">New Discovery</span>
+</button>
+</body></html>

@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+                  "secondary-dim": "#5341ad",
+                  "on-secondary-container": "#5240ab",
+                  "secondary": "#5f4eba",
+                  "outline-variant": "#aeb3b6",
+                  "on-surface-variant": "#5a6063",
+                  "on-tertiary-fixed-variant": "#005565",
+                  "on-tertiary-container": "#004b59",
+                  "surface-variant": "#dee3e7",
+                  "inverse-surface": "#0c0f10",
+                  "primary-dim": "#004bbc",
+                  "outline": "#767b7f",
+                  "surface-container-lowest": "#ffffff",
+                  "on-secondary-fixed-variant": "#5c4ab6",
+                  "surface-container-high": "#e5e9ec",
+                  "tertiary-container": "#50dcff",
+                  "surface": "#f8f9fb",
+                  "on-secondary": "#fcf7ff",
+                  "on-primary-fixed-variant": "#003e9f",
+                  "on-error-container": "#65000b",
+                  "primary-fixed-dim": "#96b1ff",
+                  "on-tertiary": "#f0fbff",
+                  "tertiary-fixed-dim": "#3ccef0",
+                  "secondary-container": "#e5deff",
+                  "on-background": "#2e3336",
+                  "inverse-on-surface": "#9b9d9f",
+                  "tertiary-fixed": "#50dcff",
+                  "tertiary": "#00687c",
+                  "on-primary-fixed": "#002361",
+                  "error-dim": "#70030f",
+                  "surface-dim": "#d5dbdf",
+                  "error": "#ac3434",
+                  "inverse-primary": "#5c8bff",
+                  "surface-container-low": "#f2f4f6",
+                  "surface-tint": "#0f57d0",
+                  "surface-container-highest": "#dee3e7",
+                  "on-tertiary-fixed": "#003641",
+                  "on-primary": "#f9f8ff",
+                  "secondary-fixed-dim": "#d7ceff",
+                  "surface-container": "#ebeef1",
+                  "secondary-fixed": "#e5deff",
+                  "on-error": "#fff7f6",
+                  "primary-container": "#aabfff",
+                  "surface-bright": "#f8f9fb",
+                  "on-surface": "#2e3336",
+                  "primary": "#0f57d0",
+                  "background": "#f8f9fb",
+                  "on-primary-container": "#00368d",
+                  "tertiary-dim": "#005b6d",
+                  "primary-fixed": "#aabfff",
+                  "on-secondary-fixed": "#3f2b98"
+          },
+          "borderRadius": {
+                  "DEFAULT": "0.25rem",
+                  "lg": "0.5rem",
+                  "xl": "0.75rem",
+                  "full": "9999px"
+          },
+          "fontFamily": {
+                  "headline": ["Manrope"],
+                  "body": ["Inter"],
+                  "label": ["Inter"]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    body { font-family: 'Inter', sans-serif; }
+    h1, h2, h3 { font-family: 'Manrope', sans-serif; }
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    .glass-nav {
+      background: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(24px);
+    }
+  </style>
+</head>
+<body class="bg-surface text-on-background selection:bg-primary-container selection:text-on-primary-container">
+<nav class="fixed top-0 w-full z-50 flex justify-between items-center px-8 h-16 glass-nav shadow-sm">
+<div class="text-2xl font-bold tracking-tighter text-blue-700">The Academic Curator</div>
+</nav>
+<main class="pt-24 pb-20 px-6 max-w-7xl mx-auto">
+<header class="relative mb-20">
+<div class="absolute inset-0 -z-10 bg-gradient-to-br from-primary/10 to-secondary/10 blur-3xl rounded-full transform -translate-y-1/2"></div>
+<div class="flex flex-col md:flex-row items-center md:items-end gap-8">
+<div class="relative group">
+<div class="absolute -inset-1 bg-gradient-to-r from-primary to-secondary rounded-[2.5rem] blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
+<img class="relative w-48 h-48 rounded-[2rem] object-cover bg-surface-container-highest shadow-xl" data-alt="professional portrait of a young male designer with glasses smiling warmly against a soft studio background high key lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDBKFbxzGZPSz5zjvii8KE5W_tbaZceDvHfN3gR_trNw3pBMF-U31vdDxGH1jsfDrlXigIAaovlGapn8XKGZZOjXMYt_GAVk6Zwl022-Fh0Xz3crKSFwy73DNYE_p25q0NpNlQHgjBH0QljekB4CNhTHsHZ_LEi0mHTZo909osDyUaKHNzMvqdDTGmKzW31kD6DzwFpWtr747QEJ5sJ-c5OTgxqQuAqdVblCGVWWUv3RTJPf-GSAwNVQf7hEz1Lg0wDjtHQIF2LQV4"/>
+</div>
+<div class="flex-1 text-center md:text-left">
+<div class="flex flex-wrap items-center justify-center md:justify-start gap-3 mb-2">
+<span class="px-3 py-1 bg-secondary-container text-on-secondary-fixed text-xs font-bold uppercase tracking-widest rounded-full">Available for Hire</span>
+<span class="px-3 py-1 bg-tertiary-container text-on-tertiary-fixed text-xs font-bold uppercase tracking-widest rounded-full">Graduate Designer</span>
+</div>
+<h1 class="text-5xl md:text-7xl font-extrabold tracking-tighter text-on-surface mb-4">Alex Rivers</h1>
+<div class="flex flex-wrap items-center justify-center md:justify-start gap-6 text-on-surface-variant font-medium">
+<a class="flex items-center gap-2 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">link</span>
+<span>github.com/arivers</span>
+</a>
+<a class="flex items-center gap-2 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">share</span>
+<span>linkedin.com/in/alexrivers</span>
+</a>
+<a class="flex items-center gap-2 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">mail</span>
+<span>hello@alexrivers.design</span>
+</a>
+</div>
+</div>
+<div class="flex gap-3">
+<button class="flex items-center gap-2 px-5 py-3 bg-white text-primary rounded-xl font-bold shadow-sm hover:scale-105 transition-transform">
+<span class="material-symbols-outlined">ios_share</span>
+            Share
+          </button>
+<button class="flex items-center justify-center w-12 h-12 bg-primary text-on-primary rounded-xl shadow-sm hover:scale-105 transition-transform">
+<span class="material-symbols-outlined">content_copy</span>
+</button>
+</div>
+</div>
+</header>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-20">
+<section class="lg:col-span-8 bg-surface-container-lowest p-10 rounded-[2rem]">
+<h2 class="text-3xl font-bold mb-6 flex items-center gap-3">
+<span class="w-8 h-1 bg-primary rounded-full"></span>
+          About
+        </h2>
+<p class="text-xl text-on-surface-variant leading-relaxed font-body">
+          I am a multidisciplinary designer and creative technologist focused on building digital experiences that bridge the gap between aesthetics and utility. My work centers on human-centric design systems and editorial layouts that tell a compelling story. Currently exploring the intersection of generative AI and collaborative workspace tools at the Royal College of Art.
+        </p>
+</section>
+<section class="lg:col-span-4 bg-surface-container-low p-10 rounded-[2rem]">
+<h2 class="text-2xl font-bold mb-6">Expertise</h2>
+<div class="flex flex-wrap gap-2">
+<span class="px-4 py-2 bg-white text-on-surface font-semibold rounded-full shadow-sm text-sm border border-outline-variant/10">UI/UX Design</span>
+<span class="px-4 py-2 bg-white text-on-surface font-semibold rounded-full shadow-sm text-sm border border-outline-variant/10">Tailwind CSS</span>
+<span class="px-4 py-2 bg-white text-on-surface font-semibold rounded-full shadow-sm text-sm border border-outline-variant/10">Figma</span>
+<span class="px-4 py-2 bg-white text-on-surface font-semibold rounded-full shadow-sm text-sm border border-outline-variant/10">React</span>
+<span class="px-4 py-2 bg-white text-on-surface font-semibold rounded-full shadow-sm text-sm border border-outline-variant/10">Prototyping</span>
+<span class="px-4 py-2 bg-white text-on-surface font-semibold rounded-full shadow-sm text-sm border border-outline-variant/10">Design Systems</span>
+<span class="px-4 py-2 bg-white text-on-surface font-semibold rounded-full shadow-sm text-sm border border-outline-variant/10">Motion</span>
+<span class="px-4 py-2 bg-white text-on-surface font-semibold rounded-full shadow-sm text-sm border border-outline-variant/10">User Research</span>
+</div>
+</section>
+</div>
+<section class="mb-20">
+<div class="flex items-center justify-between mb-10">
+<h2 class="text-4xl font-bold tracking-tight">Featured Projects</h2>
+<div class="h-px flex-1 mx-8 bg-surface-container-high hidden md:block"></div>
+<button class="text-primary font-bold hover:underline flex items-center gap-1">
+          View Archive <span class="material-symbols-outlined">trending_flat</span>
+</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<div class="group relative bg-surface-container-lowest rounded-[2rem] overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl">
+<div class="aspect-[4/3] overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="minimalist dashboard interface with clean typography and glassmorphism elements featuring data visualization charts in blue and purple" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCJ8d0H5X_EHM0keNJniGXyuxR9Ra0wCPySnioamaP_8tnVl6vpzR9VdrNqp2a11mJE8Iyu5BnRt9dGSx2EkS2ZY6B8dDZ6Q0MNOXLhjnNpaWjUh8rvMFlonroP5eW4Zb4IvQ3n73FmvYxjy5nhlTt-oW9BRE1l8vgm8uevUMP5saD7csnN5cg_lZ_qLOBr6DBqbx238e6sslix1W998AcNCdU34d6ayzj9-u1uNDv4dpFCBWbaYSSb7GLJCYttLG9QU-yYdQyn1dU"/>
+</div>
+<div class="p-8">
+<div class="flex gap-2 mb-4">
+<span class="px-3 py-1 bg-primary-container/20 text-on-primary-container text-[10px] font-bold uppercase rounded-md">Product Design</span>
+</div>
+<h3 class="text-2xl font-bold mb-3 group-hover:text-primary transition-colors">Luminal Workspace</h3>
+<p class="text-on-surface-variant text-sm mb-6 line-clamp-2">A high-performance project management tool designed for creative agencies focusing on deep work.</p>
+<div class="flex items-center justify-between mt-auto">
+<div class="flex gap-2">
+<span class="text-on-surface-variant text-xs font-medium">React</span>
+<span class="text-on-surface-variant text-xs font-medium">Next.js</span>
+</div>
+<a class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center text-on-surface hover:bg-primary hover:text-on-primary transition-all" href="#">
+<span class="material-symbols-outlined">arrow_outward</span>
+</a>
+</div>
+</div>
+</div>
+<div class="group relative bg-surface-container-lowest rounded-[2rem] overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl">
+<div class="aspect-[4/3] overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="elegant mobile app design for an art gallery featuring high quality oil painting photos and serif typography on a cream background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDUBvYTHXWyheSseANjUc-EznA9WEZKbumSkYAXSaNfDc7c26-ngiJMSTGjVyDreGgwqjk9a9sRWaFsBdP6StCwwFJrwGM9A_B59s6eIDRkbI8Wmkd_sVMAh9bp4wlaXSr8iiPMNPvkkfGotSAzM8cK8rBKKtRTPFuKZdS3j-7KN5HuPLO6CQZ8R24yAEdTyAe63R61JwLvvP9585D6gfpAL4TYlJqzTEIbzZqThowPnKvkZMEoGsKRSUID-XKyCERprj7MigDQFgA"/>
+</div>
+<div class="p-8">
+<div class="flex gap-2 mb-4">
+<span class="px-3 py-1 bg-secondary-container/20 text-on-secondary-fixed text-[10px] font-bold uppercase rounded-md">Mobile Experience</span>
+</div>
+<h3 class="text-2xl font-bold mb-3 group-hover:text-primary transition-colors">Vanguard Gallery</h3>
+<p class="text-on-surface-variant text-sm mb-6 line-clamp-2">Connecting independent artists with local collectors through an immersive augmented reality discovery app.</p>
+<div class="flex items-center justify-between mt-auto">
+<div class="flex gap-2">
+<span class="text-on-surface-variant text-xs font-medium">SwiftUI</span>
+<span class="text-on-surface-variant text-xs font-medium">ARKit</span>
+</div>
+<a class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center text-on-surface hover:bg-primary hover:text-on-primary transition-all" href="#">
+<span class="material-symbols-outlined">arrow_outward</span>
+</a>
+</div>
+</div>
+</div>
+<div class="group relative bg-surface-container-lowest rounded-[2rem] overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl">
+<div class="aspect-[4/3] overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="isometric 3D visualization of a design system featuring various UI components like buttons and toggles floating in space with soft shadows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD3f6sfnRdWsUlb02SJm8Qdvh1PElAffWYbLDwFaTxLy9KWFdHEalwNeWG8rtYneTRncelKBFbqjXxDk_8fFhXQEB_AzWCUAbhW6DZ-ulhF7p1W27xiulJjYsvLC9yMqRBd71ba3pNUU2u69KbwSSPEtcYJgMZ5rPfAztrJh6JtOeiOxnKK342iazSAHAyLMDrDjPE5Wb4Ox2a_GDOqerW1zA1VB116bcyBcuQ9V38HnL8dF1IFcwyky-s4qRVGgXjxaOQlsCHkBPM"/>
+</div>
+<div class="p-8">
+<div class="flex gap-2 mb-4">
+<span class="px-3 py-1 bg-tertiary-container/20 text-on-tertiary-container text-[10px] font-bold uppercase rounded-md">System Architecture</span>
+</div>
+<h3 class="text-2xl font-bold mb-3 group-hover:text-primary transition-colors">Core System v2</h3>
+<p class="text-on-surface-variant text-sm mb-6 line-clamp-2">An open-source library of highly accessible UI components built for high-scale enterprise applications.</p>
+<div class="flex items-center justify-between mt-auto">
+<div class="flex gap-2">
+<span class="text-on-surface-variant text-xs font-medium">TypeScript</span>
+<span class="text-on-surface-variant text-xs font-medium">Tailwind</span>
+</div>
+<a class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center text-on-surface hover:bg-primary hover:text-on-primary transition-all" href="#">
+<span class="material-symbols-outlined">arrow_outward</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="bg-primary-container/20 rounded-[3rem] p-12 text-center relative overflow-hidden">
+<div class="absolute top-0 right-0 w-64 h-64 bg-secondary/10 blur-3xl -translate-y-1/2 translate-x-1/2"></div>
+<div class="absolute bottom-0 left-0 w-64 h-64 bg-tertiary/10 blur-3xl translate-y-1/2 -translate-x-1/2"></div>
+<div class="relative z-10">
+<h2 class="text-4xl font-bold mb-4">Let's build something together.</h2>
+<p class="text-on-surface-variant text-lg mb-8 max-w-xl mx-auto">Currently open to freelance opportunities and full-time product design roles starting Summer 2024.</p>
+<div class="flex flex-col sm:flex-row gap-4 justify-center">
+<button class="bg-primary text-on-primary px-10 py-4 rounded-2xl font-bold text-lg hover:shadow-xl hover:-translate-y-1 transition-all">Contact Me</button>
+<button class="bg-white text-on-surface px-10 py-4 rounded-2xl font-bold text-lg border border-outline-variant/20 hover:bg-surface transition-all">Download Resume</button>
+</div>
+</div>
+</section>
+</main>
+<footer class="w-full py-12 px-8 flex flex-col md:flex-row justify-between items-center gap-4 bg-slate-50">
+<div class="text-lg font-bold text-slate-900">The Academic Curator</div>
+<div class="font-inter text-xs text-slate-500 text-center md:text-left">
+      © 2024 The Academic Curator. Built for the next generation of talent.
+    </div>
+<div class="flex gap-6">
+<a class="font-inter text-xs text-slate-500 hover:underline" href="#">Privacy Policy</a>
+<a class="font-inter text-xs text-slate-500 hover:underline" href="#">Terms of Service</a>
+<a class="font-inter text-xs text-slate-500 hover:underline" href="#">Contact</a>
+<a class="font-inter text-xs text-slate-500 hover:underline" href="#">FAQ</a>
+</div>
+</footer>
+</body></html>

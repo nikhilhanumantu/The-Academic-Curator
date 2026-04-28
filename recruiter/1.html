@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Curator | Search Talent</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary": "#9e1e9b",
+                        "tertiary-fixed": "#ff82f4",
+                        "inverse-on-surface": "#9b9d9f",
+                        "secondary-container": "#71eff7",
+                        "on-background": "#2c2f31",
+                        "on-tertiary": "#ffeef8",
+                        "tertiary-fixed-dim": "#f370ea",
+                        "on-error-container": "#570008",
+                        "primary-fixed-dim": "#618eff",
+                        "on-primary-fixed-variant": "#00276b",
+                        "on-secondary": "#cafcff",
+                        "tertiary-container": "#ff82f4",
+                        "surface": "#f5f6f8",
+                        "surface-container-high": "#e0e3e5",
+                        "on-secondary-fixed-variant": "#006267",
+                        "surface-container-lowest": "#ffffff",
+                        "outline": "#757779",
+                        "on-tertiary-container": "#5c005b",
+                        "surface-variant": "#dadde0",
+                        "primary-dim": "#0048b5",
+                        "inverse-surface": "#0c0f10",
+                        "on-tertiary-fixed-variant": "#6a006a",
+                        "on-surface-variant": "#595c5e",
+                        "outline-variant": "#abadaf",
+                        "secondary-dim": "#00595d",
+                        "on-secondary-container": "#00575c",
+                        "secondary": "#00666b",
+                        "on-secondary-fixed": "#004346",
+                        "primary-fixed": "#789dff",
+                        "tertiary-dim": "#8f068e",
+                        "background": "#f5f6f8",
+                        "on-primary-container": "#001f57",
+                        "primary": "#0253cd",
+                        "on-surface": "#2c2f31",
+                        "on-error": "#ffefee",
+                        "primary-container": "#789dff",
+                        "surface-bright": "#f5f6f8",
+                        "error-container": "#fb5151",
+                        "on-primary": "#f1f2ff",
+                        "secondary-fixed-dim": "#61e1e9",
+                        "surface-container": "#e6e8eb",
+                        "secondary-fixed": "#71eff7",
+                        "on-tertiary-fixed": "#320032",
+                        "surface-tint": "#0253cd",
+                        "surface-container-highest": "#dadde0",
+                        "inverse-primary": "#5c8bff",
+                        "surface-container-low": "#eff1f3",
+                        "error": "#b31b25",
+                        "surface-dim": "#d1d5d8",
+                        "on-primary-fixed": "#000000",
+                        "error-dim": "#9f0519"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Manrope"],
+                        "body": ["Manrope"],
+                        "label": ["Inter"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .aurora-gradient {
+            background: linear-gradient(135deg, #FF7AF5 0%, #7AF7FF 50%, #B4FF9F 100%);
+        }
+        .aurora-text {
+            background: linear-gradient(135deg, #FF7AF5 0%, #7AF7FF 50%, #B4FF9F 100%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface">
+<!-- SideNavBar -->
+<aside class="h-screen w-64 fixed left-0 top-0 bg-[#eff1f3] dark:bg-slate-900 flex flex-col h-full py-8 px-4 z-50">
+<div class="mb-10 px-2">
+<h1 class="text-xl font-bold font-manrope text-slate-800 dark:text-slate-100 tracking-tighter">The Curator</h1>
+<p class="text-[10px] uppercase tracking-widest text-on-surface-variant font-bold opacity-50 mt-1">Recruiter Portal</p>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl transition-colors text-[#595c5e] dark:text-slate-400 hover:bg-white/50 dark:hover:bg-slate-800 font-manrope tracking-tight text-sm font-medium" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span>Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl transition-colors text-[#0253cd] dark:text-cyan-400 font-bold border-r-4 border-[#0253cd] bg-white/50 font-manrope tracking-tight text-sm" href="#">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+<span>Search Talent</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl transition-colors text-[#595c5e] dark:text-slate-400 hover:bg-white/50 dark:hover:bg-slate-800 font-manrope tracking-tight text-sm font-medium" href="#">
+<span class="material-symbols-outlined" data-icon="bookmark">bookmark</span>
+<span>Saved Candidates</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl transition-colors text-[#595c5e] dark:text-slate-400 hover:bg-white/50 dark:hover:bg-slate-800 font-manrope tracking-tight text-sm font-medium" href="#">
+<span class="material-symbols-outlined" data-icon="chat">chat</span>
+<span>Chat</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl transition-colors text-[#595c5e] dark:text-slate-400 hover:bg-white/50 dark:hover:bg-slate-800 font-manrope tracking-tight text-sm font-medium" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span>Settings</span>
+</a>
+</nav>
+<div class="mt-auto px-2">
+<button class="w-full aurora-gradient text-on-primary font-bold py-3 px-4 rounded-xl shadow-lg shadow-primary/20 hover:opacity-90 transition-opacity flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm">add</span>
+                Post a Role
+            </button>
+<div class="mt-8 flex items-center gap-3 px-2">
+<img alt="Recruiter Profile" class="w-10 h-10 rounded-full object-cover ring-2 ring-white" data-alt="Professional headshot of a smiling middle-aged man in a navy blue suit with soft office lighting background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuANpynjc4VHyNXPhKnzzAxtdV5WZPr7QEIa-MYBpW917B8TZjbojgUP5wkcURHhuDCKUKC9xftuMM-hkDoP36f2WUK_w1dbT0q1q5BWB3MxG5DAPbsSlqm8ca4shSgf2-LZ5C9WU07bjCZ-6dRy88Z5cpFUPkKO_20oZhT2AFnyYN12Krp8QBAip7evalm7tW-5P41GyeJZl6E97_Nf9pSEoUpm2gS_pxqY9ZbgkbQgzc6ieOT1Abs20PZYg7IHOOZGIN_EIAaJ0Do"/>
+<div class="overflow-hidden">
+<p class="text-xs font-bold truncate">Marcus Chen</p>
+<p class="text-[10px] text-on-surface-variant truncate">Lead Talent Partner</p>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Canvas -->
+<main class="ml-64 min-h-screen">
+<!-- TopNavBar -->
+<header class="fixed top-0 right-0 w-[calc(100%-16rem)] h-16 z-40 bg-[#f5f6f8]/70 backdrop-blur-xl flex justify-between items-center px-8">
+<div class="flex items-center gap-4 flex-1 max-w-xl">
+<div class="relative w-full group">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-xl">search</span>
+<input class="w-full bg-surface-container-low border-none rounded-full py-2 pl-11 pr-4 font-manrope font-semibold text-sm focus:ring-2 ring-secondary-fixed transition-all placeholder:text-on-surface-variant/50" placeholder="Search by name, role, or keyword..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<button class="hover:bg-white/20 rounded-full p-2 transition-all group">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary" data-icon="notifications">notifications</span>
+</button>
+<button class="hover:bg-white/20 rounded-full p-2 transition-all group">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary" data-icon="settings">settings</span>
+</button>
+<div class="h-8 w-[1px] bg-outline-variant/20 mx-2"></div>
+<div class="flex items-center gap-2 px-2 py-1 rounded-full hover:bg-white/30 transition-colors cursor-pointer">
+<img alt="Recruiter Avatar" class="w-8 h-8 rounded-full object-cover" data-alt="Close-up portrait of a recruiter with a warm expression in a professional setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDIRgwuw1-3-0w0mtRrmNtUQfQi6_jUhKejlh3wWOI4Ep961RIkEYo0SmgMwwF2T0xugs1_Kgo7VCabyJLaQPjPd0mFp3IgsRtRpvJLsghZl3YK2gjZzyGakHVW9xpGC21hQ4oKOmuqj8bl36JmEx2uSS2fvUH6H5MDccLP3XoftMe82qgsk6YBfQixXjJ9tt869ucIcrrCcI7bfJkfOlz5wOdZEtkD8Jb93fwCFprdamQjoqETHV5buZTB67s2-sLi7I1OALz3pso"/>
+</div>
+</div>
+</header>
+<!-- Content Area -->
+<section class="pt-24 px-8 pb-12">
+<!-- Page Header & Filters -->
+<div class="mb-12">
+<div class="flex items-end justify-between mb-8">
+<div>
+<h2 class="text-4xl font-extrabold font-headline tracking-tighter text-on-surface">Find your next <span class="aurora-text">creative spark</span>.</h2>
+<p class="text-on-surface-variant mt-2 font-medium">2,482 curated candidates matching your criteria.</p>
+</div>
+</div>
+<!-- Advanced Filters Glass Area -->
+<div class="bg-surface-container-low/50 p-6 rounded-2xl flex flex-wrap gap-6 items-end">
+<div class="flex-1 min-w-[200px]">
+<label class="block text-[10px] font-bold uppercase tracking-widest text-on-surface-variant mb-2 font-label">Skills &amp; Expertise</label>
+<div class="flex flex-wrap gap-2">
+<span class="bg-primary text-on-primary px-3 py-1 rounded-full text-xs font-semibold flex items-center gap-1">UI Design <span class="material-symbols-outlined text-[14px] cursor-pointer">close</span></span>
+<span class="bg-primary text-on-primary px-3 py-1 rounded-full text-xs font-semibold flex items-center gap-1">Tailwind <span class="material-symbols-outlined text-[14px] cursor-pointer">close</span></span>
+<button class="bg-white/60 hover:bg-white border border-outline-variant/20 text-on-surface px-3 py-1 rounded-full text-xs font-semibold flex items-center gap-1 transition-colors">
+<span class="material-symbols-outlined text-[14px]">add</span> Add Skill
+                            </button>
+</div>
+</div>
+<div class="w-48">
+<label class="block text-[10px] font-bold uppercase tracking-widest text-on-surface-variant mb-2 font-label">Experience</label>
+<select class="w-full bg-white/60 border-none rounded-xl py-2 px-3 font-semibold text-sm focus:ring-2 ring-primary/20">
+<option>Any Experience</option>
+<option>Junior (0-2 yrs)</option>
+<option>Mid (3-5 yrs)</option>
+<option>Senior (5+ yrs)</option>
+</select>
+</div>
+<div class="w-48">
+<label class="block text-[10px] font-bold uppercase tracking-widest text-on-surface-variant mb-2 font-label">Location</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-2 top-1/2 -translate-y-1/2 text-on-surface-variant text-lg">location_on</span>
+<input class="w-full bg-white/60 border-none rounded-xl py-2 pl-9 pr-3 font-semibold text-sm focus:ring-2 ring-primary/20" placeholder="Remote, NYC..." type="text"/>
+</div>
+</div>
+<button class="bg-on-background text-surface py-2 px-6 rounded-xl font-bold text-sm hover:opacity-90 transition-opacity">
+                        Apply Filters
+                    </button>
+</div>
+</div>
+<!-- Talent Grid (Asymmetric Bento-like feel) -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Candidate Card 1 -->
+<div class="group relative bg-surface-container-lowest rounded-xl p-1 transition-all hover:scale-[1.02] duration-300">
+<div class="absolute inset-0 aurora-gradient opacity-0 group-hover:opacity-10 rounded-xl transition-opacity blur-xl"></div>
+<div class="relative h-full bg-surface-container-lowest rounded-[calc(0.75rem-1px)] p-6 flex flex-col">
+<div class="flex justify-between items-start mb-6">
+<div class="relative">
+<div class="absolute inset-0 bg-secondary-container blur-lg opacity-40 rounded-full animate-pulse"></div>
+<img alt="Candidate" class="relative w-20 h-20 rounded-2xl object-cover shadow-sm" data-alt="Young woman with curly hair smiling brightly, studio portrait with clean soft lighting and a neutral background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAf9XvPA3ZY8a3avSsPXgUcInyMvnyLiA5iedVmYMEZ6vJNC8LXTXzqBNaXpVssf__twm5m0zzicgSaPYlJmw4VW4I-ExjrmEnSXrF_4Fs3b0N7ow7ANMFWluCWMQkNsVSrnyox6Hxn0GVbwc3a4b7eC7eeesO1xsXc01ANFtJrgjPuz7K3Zt7Up-Weyij24AhYX2uZjEU0OSTD6g6PCwS47dEA7pXQ7wbAmKyhBjBeVYdtmJEyz0jsk7smosakHqwGb6B1LaNTCmU"/>
+</div>
+<div class="flex gap-1">
+<button class="p-2 rounded-full hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-on-surface-variant">favorite</span>
+</button>
+<button class="p-2 rounded-full hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-on-surface-variant">share</span>
+</button>
+</div>
+</div>
+<div class="mb-6">
+<h3 class="text-xl font-bold tracking-tight mb-1">Elena Rodriguez</h3>
+<p class="text-sm font-medium text-on-surface-variant">Product Designer • Rhode Island School of Design</p>
+</div>
+<div class="flex flex-wrap gap-2 mb-6">
+<span class="bg-surface-container text-on-surface px-2 py-1 rounded-lg text-[10px] font-bold font-label">FIGMA</span>
+<span class="bg-surface-container text-on-surface px-2 py-1 rounded-lg text-[10px] font-bold font-label">PROTOTYPING</span>
+<span class="bg-surface-container text-on-surface px-2 py-1 rounded-lg text-[10px] font-bold font-label">REACT</span>
+</div>
+<div class="bg-surface-container-low rounded-xl p-4 mb-8">
+<p class="text-[10px] uppercase font-bold text-on-surface-variant mb-2 tracking-widest font-label">Project Highlight</p>
+<p class="text-sm leading-relaxed italic text-on-surface/80">"Redesigned the onboarding flow for a fintech startup, increasing conversion by 24%."</p>
+</div>
+<div class="mt-auto grid grid-cols-2 gap-3">
+<button class="bg-primary text-on-primary font-bold py-3 px-4 rounded-xl text-sm hover:opacity-90 transition-opacity">View Profile</button>
+<button class="bg-surface-container-highest/50 backdrop-blur-sm text-on-surface font-bold py-3 px-4 rounded-xl text-sm hover:bg-surface-container-highest transition-colors">Save Candidate</button>
+</div>
+</div>
+</div>
+<!-- Candidate Card 2 -->
+<div class="group relative bg-surface-container-lowest rounded-xl p-1 transition-all hover:scale-[1.02] duration-300">
+<div class="absolute inset-0 aurora-gradient opacity-0 group-hover:opacity-10 rounded-xl transition-opacity blur-xl"></div>
+<div class="relative h-full bg-surface-container-lowest rounded-[calc(0.75rem-1px)] p-6 flex flex-col">
+<div class="flex justify-between items-start mb-6">
+<div class="relative">
+<img alt="Candidate" class="relative w-20 h-20 rounded-2xl object-cover shadow-sm" data-alt="Young man with short hair wearing a linen shirt, professional outdoor portrait with soft evening light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB7zCWvuX1TdEkjwljHfqNKquBPOcZz0GKglIJfefiFvg7cJ34XAK2pK_c5dU7XrWOqJb0UJfqD0YrNuNmVP-vIB317IT6LoNpAIjJtY6ykcgT3TgHGOD8s1d6ZAYsSFG6WMe4K9KQgrWU70SbRDGoT0Hte0eD-eJLTkO65_ujWltaTRwdUZc7tT7-yuwUOuImdHzoLkoozfxfOmAW4RLcpV49SbRATa9ZDBIjkMBq588uXdtjGCjPh_ZHllegDKeixclfyHSXGZVE"/>
+</div>
+<div class="flex gap-1">
+<button class="p-2 rounded-full hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-on-surface-variant">favorite</span>
+</button>
+<button class="p-2 rounded-full hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-on-surface-variant">share</span>
+</button>
+</div>
+</div>
+<div class="mb-6">
+<h3 class="text-xl font-bold tracking-tight mb-1">Jordan Smith</h3>
+<p class="text-sm font-medium text-on-surface-variant">Frontend Engineer • Georgia Tech</p>
+</div>
+<div class="flex flex-wrap gap-2 mb-6">
+<span class="bg-surface-container text-on-surface px-2 py-1 rounded-lg text-[10px] font-bold font-label">TYPESCRIPT</span>
+<span class="bg-secondary-container text-on-secondary-container px-2 py-1 rounded-lg text-[10px] font-bold font-label">WEBGL</span>
+<span class="bg-surface-container text-on-surface px-2 py-1 rounded-lg text-[10px] font-bold font-label">TAILWIND</span>
+</div>
+<div class="bg-surface-container-low rounded-xl p-4 mb-8">
+<p class="text-[10px] uppercase font-bold text-on-surface-variant mb-2 tracking-widest font-label">Project Highlight</p>
+<p class="text-sm leading-relaxed italic text-on-surface/80">"Built a custom 3D data visualization engine for climate change research."</p>
+</div>
+<div class="mt-auto grid grid-cols-2 gap-3">
+<button class="bg-primary text-on-primary font-bold py-3 px-4 rounded-xl text-sm hover:opacity-90 transition-opacity">View Profile</button>
+<button class="bg-surface-container-highest/50 backdrop-blur-sm text-on-surface font-bold py-3 px-4 rounded-xl text-sm hover:bg-surface-container-highest transition-colors">Save Candidate</button>
+</div>
+</div>
+</div>
+<!-- Candidate Card 3 -->
+<div class="group relative bg-surface-container-lowest rounded-xl p-1 transition-all hover:scale-[1.02] duration-300">
+<div class="absolute inset-0 aurora-gradient opacity-0 group-hover:opacity-10 rounded-xl transition-opacity blur-xl"></div>
+<div class="relative h-full bg-surface-container-lowest rounded-[calc(0.75rem-1px)] p-6 flex flex-col">
+<div class="flex justify-between items-start mb-6">
+<div class="relative">
+<img alt="Candidate" class="relative w-20 h-20 rounded-2xl object-cover shadow-sm" data-alt="Young professional woman with glasses and a friendly smile in a modern bright office space" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBAfGmrM3opf7n-i6LnUYhCFKMEO--TTp6_aFFYL-IDwp05bgUc3XEZWxA8HdRqeYamjTY491I266c7xEtVEzNfQ1aaHMvNbw_d4vzzcUma_6gTrC7WgyrlsLJHu_4pTA9byAlQQwR09YAe3NGYHSs-dxGsowGsN0PkhrrF5ht_IvG5PKWrx8KZUcCI66qkemfux3E48HBpmFrd59pCNxc0viL4UFzqVB8tbysvVUalCp8KIq_ymCBQJABVT1rJFcruXLjZS-ZMXYI"/>
+</div>
+<div class="flex gap-1">
+<button class="p-2 rounded-full hover:bg-surface-container transition-colors text-tertiary-dim">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">favorite</span>
+</button>
+<button class="p-2 rounded-full hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-on-surface-variant">share</span>
+</button>
+</div>
+</div>
+<div class="mb-6">
+<h3 class="text-xl font-bold tracking-tight mb-1">Amara Okafor</h3>
+<p class="text-sm font-medium text-on-surface-variant">UX Researcher • Stanford University</p>
+</div>
+<div class="flex flex-wrap gap-2 mb-6">
+<span class="bg-surface-container text-on-surface px-2 py-1 rounded-lg text-[10px] font-bold font-label">ETHNOGRAPHY</span>
+<span class="bg-surface-container text-on-surface px-2 py-1 rounded-lg text-[10px] font-bold font-label">DATA ANALYTICS</span>
+<span class="bg-surface-container text-on-surface px-2 py-1 rounded-lg text-[10px] font-bold font-label">INTERVIEWING</span>
+</div>
+<div class="bg-surface-container-low rounded-xl p-4 mb-8">
+<p class="text-[10px] uppercase font-bold text-on-surface-variant mb-2 tracking-widest font-label">Project Highlight</p>
+<p class="text-sm leading-relaxed italic text-on-surface/80">"Conducted a 6-month study on digital literacy in rural communities."</p>
+</div>
+<div class="mt-auto grid grid-cols-2 gap-3">
+<button class="bg-primary text-on-primary font-bold py-3 px-4 rounded-xl text-sm hover:opacity-90 transition-opacity">View Profile</button>
+<button class="bg-surface-container-highest/50 backdrop-blur-sm text-on-surface font-bold py-3 px-4 rounded-xl text-sm hover:bg-surface-container-highest transition-colors">Saved</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Pagination/Load More -->
+<div class="mt-16 flex flex-col items-center">
+<p class="text-sm font-medium text-on-surface-variant mb-4">Showing 3 of 2,482 candidates</p>
+<button class="px-8 py-3 bg-white border border-outline-variant/30 rounded-full font-bold text-sm text-on-surface hover:bg-surface-container-low transition-colors shadow-sm">
+                    Load More Discoveries
+                </button>
+</div>
+</section>
+</main>
+<!-- Floating Help Button (Aurora detail) -->
+<button class="fixed bottom-8 right-8 w-14 h-14 aurora-gradient text-on-primary rounded-full shadow-2xl flex items-center justify-center group hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-2xl group-hover:rotate-12 transition-transform">contact_support</span>
+</button>
+</body></html>

@@ -1,0 +1,682 @@
+/* ============================================================
+   THE ACADEMIC CURATOR — Auth Styles
+   Dark Desk Background + Glassmorphism Card
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* ---------- CSS Tokens ---------- */
+:root {
+  /* Brand gradient: violet → blue (student) */
+  --ac-grad-student:   linear-gradient(135deg, #7c3aed 0%, #3b82f6 100%);
+  /* Brand gradient: sky → indigo (recruiter) */
+  --ac-grad-recruiter: linear-gradient(135deg, #0ea5e9 0%, #6366f1 100%);
+
+  --ac-bg:             #0d0d0d;
+  --ac-glass:          rgba(255, 255, 255, 0.07);
+  --ac-glass-hover:    rgba(255, 255, 255, 0.11);
+  --ac-border:         rgba(255, 255, 255, 0.08);
+  --ac-border-focus:   rgba(124, 58, 237, 0.65);
+  --ac-border-focus-r: rgba(99, 102, 241, 0.65);
+
+  --ac-text:           #f0f2ff;
+  --ac-muted:          rgba(180, 185, 215, 0.6);
+  --ac-subtle:         rgba(180, 185, 215, 0.35);
+
+  --ac-error:          #f87171;
+  --ac-error-bg:       rgba(239, 68, 68, 0.10);
+  --ac-success:        #34d399;
+  --ac-success-bg:     rgba(52, 211, 153, 0.10);
+
+  --ac-radius-card:    24px;
+  --ac-radius-input:   14px;
+  --ac-radius-pill:    999px;
+  --ac-radius-btn:     14px;
+
+  --ac-shadow-card:    0 0 0 1px rgba(255,255,255,0.05),
+                       0 32px 64px rgba(0,0,0,0.75),
+                       0 8px 24px rgba(0,0,0,0.5);
+  --ac-shadow-btn:     0 6px 24px rgba(124,58,237,0.50);
+  --ac-shadow-btn-r:   0 6px 24px rgba(99,102,241,0.50);
+
+  --t-fast: 0.15s ease;
+  --t-med:  0.28s cubic-bezier(0.4, 0, 0.2, 1);
+  --t-slow: 0.45s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* ============================================================
+   ROOT & FULL-PAGE BACKGROUND
+   ============================================================ */
+.auth-root {
+  position: fixed;           /* lock entire auth page to viewport */
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: var(--ac-text);
+  font-family: 'Inter', system-ui, sans-serif;
+  overflow: hidden;
+}
+
+/* ---- Photo background layer ---- */
+.auth-bg-container {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+/* ---- Ken Burns slow zoom (hardware accelerated) ---- */
+.auth-bg-photo {
+  position: absolute;
+  inset: -6%;          /* over-size so zoom never shows edges */
+  background: url('/auth-bg.png') center center / cover no-repeat;
+  filter: brightness(0.52);
+  animation: kenBurns 35s ease-in-out infinite alternate;
+  transform-origin: center center;
+  will-change: transform;
+}
+@keyframes kenBurns {
+  /* translate3d(0,0,0) forces GPU acceleration to prevent lag */
+  0%   { transform: translate3d(0,0,0) scale(1.00); }
+  50%  { transform: translate3d(0,0,0) scale(1.06); }
+  100% { transform: translate3d(0,0,0) scale(1.03); }
+}
+
+/* Pure dark vignette — black edges only, no colour */
+.auth-bg-vignette {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse 80% 80% at 50% 50%,
+    transparent 28%,
+    rgba(0, 0, 0, 0.58) 100%
+  );
+}
+
+
+/* ============================================================
+   BRAND LOGO (top-left)
+   ============================================================ */
+.auth-brand {
+  position: relative;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  padding: 28px 36px;
+  text-decoration: none;
+  align-self: flex-start;
+  transition: transform var(--t-med);
+}
+.auth-brand:hover { transform: translateY(-1px); }
+
+.auth-brand-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px; height: 40px;
+  border-radius: 12px;
+  background: var(--ac-grad-student);
+  color: #fff;
+  box-shadow: 0 4px 16px rgba(124,58,237,0.55);
+  transition: box-shadow var(--t-med), transform var(--t-med);
+  flex-shrink: 0;
+}
+.auth-brand-icon--recruiter {
+  background: var(--ac-grad-recruiter);
+  box-shadow: 0 4px 16px rgba(99,102,241,0.55);
+}
+.auth-brand:hover .auth-brand-icon {
+  transform: scale(1.1) rotate(-5deg);
+  box-shadow: 0 8px 24px rgba(124,58,237,0.70);
+}
+
+.auth-brand-name {
+  font-family: 'Poppins', system-ui, sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  color: #fff;
+  text-shadow: 0 1px 12px rgba(0,0,0,0.6);
+}
+.auth-brand-name em {
+  font-style: normal;
+  background: var(--ac-grad-student);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ============================================================
+   MAIN CENTERED LAYOUT
+   ============================================================ */
+.auth-main {
+  position: relative;
+  z-index: 20;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 0 16px;
+  /* scroll the content (card) inside, not the whole page */
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+/* ============================================================
+   GLASSMORPHISM CARD
+   ============================================================ */
+.auth-card {
+  width: 100%;
+  max-width: 480px;
+  /* Neutral frosted glass — reduced blur to prevent lag */
+  background: rgba(20, 18, 16, 0.45);
+  backdrop-filter: blur(12px) saturate(120%);
+  -webkit-backdrop-filter: blur(12px) saturate(120%);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--ac-radius-card);
+  box-shadow: 0 0 0 1px rgba(255,255,255,0.06),
+              0 24px 48px rgba(0,0,0,0.50),
+              0 6px 16px rgba(0,0,0,0.35);
+  padding: 44px 40px;
+  position: relative;
+  overflow: hidden;
+  transition: background var(--t-med), box-shadow var(--t-med);
+}
+.auth-card:hover {
+  background: rgba(25, 22, 20, 0.52);
+  box-shadow: 0 0 0 1px rgba(255,255,255,0.10),
+              0 32px 56px rgba(0,0,0,0.55),
+              0 8px 20px rgba(0,0,0,0.40);
+}
+
+/* Shimmering top-edge highlight */
+.auth-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 50%;
+  transform: translateX(-50%);
+  width: 65%; height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(167,139,250,0.70), transparent);
+  transition: width var(--t-slow);
+}
+.auth-card:hover::before { width: 90%; }
+
+/* Entrance animation */
+@keyframes cardEnter {
+  from { opacity: 0; transform: translateY(30px) scale(0.96); }
+  to   { opacity: 1; transform: translateY(0)   scale(1); }
+}
+.auth-card--enter {
+  animation: cardEnter 0.55s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+
+/* ============================================================
+   CARD HEADER
+   ============================================================ */
+.auth-card-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+.auth-card-title {
+  font-family: 'Poppins', system-ui, sans-serif;
+  font-size: clamp(1.65rem, 4vw, 2.1rem);
+  font-weight: 800;
+  letter-spacing: -0.035em;
+  line-height: 1.15;
+  color: var(--ac-text);
+  margin: 0 0 8px;
+}
+.auth-card-title .ac-highlight-student {
+  background: var(--ac-grad-student);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.auth-card-title .ac-highlight-recruiter {
+  background: var(--ac-grad-recruiter);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.auth-card-subtitle {
+  font-size: 0.88rem;
+  color: var(--ac-muted);
+  margin: 0;
+  line-height: 1.55;
+}
+
+/* ============================================================
+   ROLE TOGGLE  (Student | Recruiter)
+   ============================================================ */
+.role-toggle {
+  display: flex;
+  gap: 4px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.09);
+  border-radius: var(--ac-radius-pill);
+  padding: 4px;
+  margin-bottom: 28px;
+}
+.role-tab {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  padding: 11px 14px;
+  border-radius: var(--ac-radius-pill);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  text-decoration: none;
+  color: var(--ac-muted);
+  transition: all var(--t-med);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+.role-tab::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(255,255,255,0.06);
+  opacity: 0;
+  transition: opacity var(--t-med);
+  border-radius: inherit;
+}
+.role-tab:hover { color: var(--ac-text); }
+.role-tab:hover::before { opacity: 1; }
+
+.role-tab--active {
+  background: var(--ac-grad-student);
+  color: #fff !important;
+  box-shadow: 0 3px 14px rgba(124,58,237,0.50);
+  pointer-events: none;
+}
+.role-tab--active::before { display: none; }
+.role-tab--active svg { stroke: #fff; }
+
+/* Recruiter active variant */
+.auth-card--recruiter .role-tab--active {
+  background: var(--ac-grad-recruiter);
+  box-shadow: 0 3px 14px rgba(99,102,241,0.50);
+}
+
+/* ============================================================
+   FORM
+   ============================================================ */
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* ============================================================
+   FLOATING INPUT FIELD
+   ============================================================ */
+.fi-wrap {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.fi-input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 20px 16px 8px 16px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: var(--ac-radius-input);
+  color: var(--ac-text);
+  font-size: 0.94rem;
+  font-family: 'Inter', system-ui, sans-serif;
+  outline: none;
+  transition: border-color var(--t-med), background var(--t-med), box-shadow var(--t-med);
+  caret-color: #a78bfa;
+  -webkit-appearance: none;
+  appearance: none;
+}
+.fi-input::placeholder { color: transparent; user-select: none; }
+.fi-input--icon { padding-left: 46px; }
+.fi-input--pwd  { padding-right: 48px; }
+
+/* hover */
+.fi-input:hover:not(:focus) {
+  border-color: rgba(255,255,255,0.22);
+  background: rgba(255,255,255,0.12);
+}
+/* focus */
+.fi-input:focus {
+  border-color: var(--ac-border-focus);
+  background: rgba(255,255,255,0.13);
+  box-shadow: 0 0 0 3px rgba(139,92,246,0.20),
+              inset 0 1px 2px rgba(0,0,0,0.20);
+}
+.auth-card--recruiter .fi-input:focus {
+  border-color: var(--ac-border-focus-r);
+  box-shadow: 0 0 0 3px rgba(99,102,241,0.18),
+              inset 0 1px 2px rgba(0,0,0,0.35);
+}
+.fi-wrap--error .fi-input {
+  border-color: rgba(248,113,113,0.55);
+  box-shadow: 0 0 0 3px rgba(239,68,68,0.12);
+}
+
+/* Floating label */
+.fi-label {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.88rem;
+  color: var(--ac-muted);
+  pointer-events: none;
+  transition: all var(--t-med);
+  transform-origin: left center;
+  white-space: nowrap;
+}
+.fi-label--icon { left: 46px; }
+
+/* Float up when filled or focused */
+.fi-input:focus         ~ .fi-label,
+.fi-input:not(:placeholder-shown) ~ .fi-label,
+.fi-label--float {
+  top: 12px;
+  transform: translateY(0) scale(0.74);
+  color: #a78bfa;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+.auth-card--recruiter .fi-input:focus ~ .fi-label,
+.auth-card--recruiter .fi-input:not(:placeholder-shown) ~ .fi-label {
+  color: #818cf8;
+}
+
+/* Leading icon */
+.fi-icon {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--ac-muted);
+  pointer-events: none;
+  display: flex;
+  transition: color var(--t-med), transform var(--t-med);
+}
+.fi-icon--active { color: #a78bfa; }
+.auth-card--recruiter .fi-icon--active { color: #818cf8; }
+
+/* Password toggle */
+.fi-pwd-toggle {
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: var(--ac-muted);
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  border-radius: 8px;
+  transition: color var(--t-fast), background var(--t-fast);
+}
+.fi-pwd-toggle:hover {
+  color: var(--ac-text);
+  background: rgba(255,255,255,0.08);
+}
+
+/* Error text */
+.fi-error {
+  margin: 5px 2px 0;
+  font-size: 0.76rem;
+  color: var(--ac-error);
+  line-height: 1.4;
+  animation: fadeSlideIn 0.2s ease both;
+}
+@keyframes fadeSlideIn {
+  from { opacity: 0; transform: translateY(-4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ============================================================
+   PASSWORD STRENGTH
+   ============================================================ */
+.pwd-strength {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 6px;
+  animation: fadeSlideIn 0.2s ease both;
+}
+.pwd-strength-bars {
+  display: flex;
+  gap: 5px;
+  flex: 1;
+}
+.pwd-strength-bar {
+  flex: 1;
+  height: 3px;
+  border-radius: 99px;
+  transition: background 0.35s ease;
+}
+.pwd-strength-label {
+  font-size: 0.74rem;
+  font-weight: 700;
+  min-width: 42px;
+  text-align: right;
+  letter-spacing: 0.01em;
+  transition: color 0.35s ease;
+}
+
+/* ============================================================
+   SUBMIT BUTTON
+   ============================================================ */
+.auth-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  padding: 16px 24px;
+  background: var(--ac-grad-student);
+  color: #fff;
+  font-family: 'Poppins', system-ui, sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  border: none;
+  border-radius: var(--ac-radius-btn);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: transform var(--t-med), box-shadow var(--t-med), filter var(--t-med);
+  box-shadow: var(--ac-shadow-btn);
+  min-height: 54px;
+  margin-top: 4px;
+}
+
+/* Shimmer sweep on hover */
+.auth-btn::after {
+  content: '';
+  position: absolute;
+  top: 0; left: -100%;
+  width: 60%; height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.18), transparent);
+  transform: skewX(-20deg);
+  transition: left 0.55s ease;
+}
+.auth-btn:hover:not(:disabled)::after { left: 150%; }
+
+.auth-btn:hover:not(:disabled) {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 32px rgba(124,58,237,0.65);
+  filter: brightness(1.05);
+}
+.auth-btn:active:not(:disabled) {
+  transform: translateY(-1px) scale(0.985);
+  box-shadow: 0 4px 14px rgba(124,58,237,0.45);
+  filter: brightness(0.95);
+}
+.auth-btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+/* Recruiter variant */
+.auth-btn--recruiter {
+  background: var(--ac-grad-recruiter) !important;
+  box-shadow: var(--ac-shadow-btn-r) !important;
+}
+.auth-btn--recruiter:hover:not(:disabled) {
+  box-shadow: 0 10px 32px rgba(99,102,241,0.65) !important;
+}
+
+/* Loading spinner */
+.auth-btn-spinner {
+  width: 20px; height: 20px;
+  border: 2.5px solid rgba(255,255,255,0.30);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* ============================================================
+   ALERT MESSAGES
+   ============================================================ */
+.auth-alert {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 12px 16px;
+  border-radius: var(--ac-radius-input);
+  font-size: 0.86rem;
+  font-weight: 500;
+  line-height: 1.5;
+  border: 1px solid transparent;
+  animation: fadeSlideIn 0.25s ease both;
+}
+.auth-alert svg { flex-shrink: 0; margin-top: 2px; }
+.auth-alert--error {
+  background: var(--ac-error-bg);
+  color: var(--ac-error);
+  border-color: rgba(248,113,113,0.20);
+}
+.auth-alert--success {
+  background: var(--ac-success-bg);
+  color: var(--ac-success);
+  border-color: rgba(52,211,153,0.20);
+}
+
+/* ============================================================
+   FORGOT / CHECKBOX ROW
+   ============================================================ */
+.auth-forgot {
+  text-align: right;
+  font-size: 0.81rem;
+  margin-top: 6px;
+}
+.auth-forgot a {
+  color: var(--ac-muted);
+  text-decoration: none;
+  transition: color var(--t-fast);
+}
+.auth-forgot a:hover { color: #a78bfa; }
+
+.auth-check-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  margin: -2px 0;
+}
+.auth-check-row input[type="checkbox"] {
+  width: 17px; height: 17px;
+  border-radius: 5px;
+  border: 1.5px solid rgba(255,255,255,0.18);
+  background: rgba(255,255,255,0.06);
+  accent-color: #7c3aed;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: border-color var(--t-fast);
+}
+.auth-check-row input:hover { border-color: rgba(255,255,255,0.35); }
+.auth-check-row span {
+  font-size: 0.85rem;
+  color: var(--ac-muted);
+  transition: color var(--t-fast);
+  user-select: none;
+}
+.auth-check-row:hover span { color: var(--ac-text); }
+
+/* ============================================================
+   NAVIGATION LINK (bottom)
+   ============================================================ */
+.auth-link {
+  display: block;
+  text-align: center;
+  font-size: 0.86rem;
+  color: var(--ac-muted);
+  text-decoration: none;
+  margin-top: 6px;
+}
+.auth-link a {
+  color: #a78bfa;
+  font-weight: 600;
+  text-decoration: none;
+  position: relative;
+  transition: color var(--t-fast);
+}
+.auth-link a::after {
+  content: '';
+  position: absolute;
+  left: 0; bottom: -1px;
+  width: 0; height: 1px;
+  background: currentColor;
+  transition: width var(--t-med);
+}
+.auth-link a:hover::after { width: 100%; }
+.auth-link a:hover { color: #c4b5fd; }
+.auth-card--recruiter .auth-link a { color: #818cf8; }
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.auth-footer {
+  position: relative;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 16px 32px 24px;
+  font-size: 0.74rem;
+  color: rgba(255,255,255,0.28);
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.auth-footer-link {
+  color: rgba(255,255,255,0.28);
+  text-decoration: none;
+  transition: color var(--t-fast);
+}
+.auth-footer-link:hover { color: rgba(255,255,255,0.55); }
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 520px) {
+  .auth-card { padding: 30px 20px; border-radius: 18px; }
+  .auth-brand { padding: 18px 20px; }
+  .auth-brand-name { font-size: 0.95rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .auth-bg-photo, .auth-card--enter, .auth-alert,
+  .fi-error, .pwd-strength, .auth-btn::after { animation: none !important; transition: none !important; }
+}

@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Academic Curator | Discover &amp; Showcase Talent</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Manrope:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "secondary-dim": "#5341ad",
+                      "on-secondary-container": "#5240ab",
+                      "secondary": "#5f4eba",
+                      "outline-variant": "#aeb3b6",
+                      "on-surface-variant": "#5a6063",
+                      "on-tertiary-fixed-variant": "#005565",
+                      "on-tertiary-container": "#004b59",
+                      "surface-variant": "#dee3e7",
+                      "inverse-surface": "#0c0f10",
+                      "primary-dim": "#004bbc",
+                      "outline": "#767b7f",
+                      "surface-container-lowest": "#ffffff",
+                      "on-secondary-fixed-variant": "#5c4ab6",
+                      "surface-container-high": "#e5e9ec",
+                      "tertiary-container": "#50dcff",
+                      "surface": "#f8f9fb",
+                      "on-secondary": "#fcf7ff",
+                      "on-primary-fixed-variant": "#003e9f",
+                      "on-error-container": "#65000b",
+                      "primary-fixed-dim": "#96b1ff",
+                      "on-tertiary": "#f0fbff",
+                      "tertiary-fixed-dim": "#3ccef0",
+                      "secondary-container": "#e5deff",
+                      "on-background": "#2e3336",
+                      "inverse-on-surface": "#9b9d9f",
+                      "tertiary-fixed": "#50dcff",
+                      "tertiary": "#00687c",
+                      "on-primary-fixed": "#002361",
+                      "error-dim": "#70030f",
+                      "surface-dim": "#d5dbdf",
+                      "error": "#ac3434",
+                      "inverse-primary": "#5c8bff",
+                      "surface-container-low": "#f2f4f6",
+                      "surface-tint": "#0f57d0",
+                      "surface-container-highest": "#dee3e7",
+                      "on-tertiary-fixed": "#003641",
+                      "on-primary": "#f9f8ff",
+                      "secondary-fixed-dim": "#d7ceff",
+                      "surface-container": "#ebeef1",
+                      "secondary-fixed": "#e5deff",
+                      "error-container": "#f56965",
+                      "on-error": "#fff7f6",
+                      "primary-container": "#aabfff",
+                      "surface-bright": "#f8f9fb",
+                      "on-surface": "#2e3336",
+                      "primary": "#0f57d0",
+                      "background": "#f8f9fb",
+                      "on-primary-container": "#00368d",
+                      "tertiary-dim": "#005b6d",
+                      "primary-fixed": "#aabfff",
+                      "on-secondary-fixed": "#3f2b98"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "1rem",
+                      "2xl": "1.5rem",
+                      "full": "9999px"
+              },
+              "fontFamily": {
+                      "headline": ["Manrope"],
+                      "body": ["Inter"],
+                      "label": ["Inter"]
+              }
+            },
+          }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3 { font-family: 'Manrope', sans-serif; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface selection:bg-primary-container/30">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 flex justify-between items-center px-8 h-16 bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl shadow-sm dark:shadow-none">
+<div class="text-2xl font-bold tracking-tighter text-blue-700 dark:text-blue-400">The Academic Curator</div>
+<div class="hidden md:flex items-center space-gap-8 gap-x-8 font-manrope font-semibold tracking-tight">
+<a class="text-blue-700 dark:text-blue-400 border-b-2 border-blue-700 transition-colors" href="#">Discover</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-300 transition-colors" href="#">Showcase</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-300 transition-colors" href="#">Resources</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="px-6 py-2 rounded-lg font-semibold text-blue-700 dark:text-blue-400 hover:text-blue-600 transition-colors">Sign In</button>
+</div>
+</nav>
+<main class="pt-16">
+<!-- Hero Section -->
+<section class="relative px-8 pt-24 pb-32 overflow-hidden">
+<div class="absolute inset-0 -z-10 bg-gradient-to-br from-primary/10 via-background to-secondary/5"></div>
+<div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
+<div class="space-y-8">
+<div class="inline-flex items-center px-3 py-1 rounded-full bg-secondary-container text-on-secondary-fixed text-xs font-bold tracking-wider uppercase">
+                        Empowering Student Creators
+                    </div>
+<h1 class="text-6xl md:text-7xl font-extrabold tracking-tighter leading-[1.1] text-on-surface">
+                        Discover Talent. <br/>
+<span class="text-primary">Showcase Skills.</span> <br/>
+                        Build Your Future.
+                    </h1>
+<p class="text-xl text-on-surface-variant max-w-lg leading-relaxed">
+                        The premium gallery for emerging academics and creative minds. Connect with recruiters and peers through high-end portfolio experiences.
+                    </p>
+<div class="flex flex-wrap gap-4">
+<button class="px-8 py-4 bg-primary text-on-primary rounded-xl font-bold text-lg hover:scale-[1.02] transition-transform shadow-lg shadow-primary/20">
+                            Create Portfolio
+                        </button>
+<button class="px-8 py-4 bg-surface-container-high text-primary rounded-xl font-bold text-lg hover:bg-surface-container-highest transition-colors">
+                            Explore Talent
+                        </button>
+</div>
+</div>
+<div class="relative">
+<div class="aspect-square rounded-2xl overflow-hidden shadow-2xl rotate-3 bg-surface-container-lowest p-4">
+<img class="w-full h-full object-cover rounded-xl" data-alt="close-up of a diverse group of college students collaborating on digital designs in a sunlit modern studio with glass walls" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDXBRzUqkw9Fwqr6JT8lfd35QKdTho6nVyGgfkbEsmwpnF4VvJDvTF1LvCOsy1NcL9vJ_wutXK-xGN-XyOZi6z4PKwwnrIzUMBzeGAaBFTU0NxyLBFjjwUbPsNS1z1X16fcoYfEZeqwweKOgQRoOtatVQpLUOxtycelUKqre65aA4pPZwQUHZj9GVB3BJDu0exElSRgVcinrpXldvFghbA_tKnkHMd6k75U0vVM5S1U8tu-Mcf7shgYCjYESe3AEnuGJbrjgs7DRv4"/>
+</div>
+<div class="absolute -bottom-8 -left-8 aspect-[4/3] w-64 rounded-xl overflow-hidden shadow-xl -rotate-6 border-8 border-white">
+<img class="w-full h-full object-cover" data-alt="high-quality digital tablet displaying a clean minimalist student portfolio website with vibrant typography and project grids" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBX09O6WhAsuioDDLQcAiyF0rM4QLjI6mcxaTnMrJAkbEo63UKJtGcrKqxvkUkN4N0iT7hhg0L9a4KhRAVIZowE9hi1xJmsx3bzbMSI8MLMcWL0XlnvcuizHUrqhPyt1k-vG53ZA0TNmXxsptLxuh2tExsrriXAUKqP2c1Rlbv8Sw70zybXT03qpW4is-RRyJGGTISoRYslrklpDVgn5cTN6cHRs828s1CmtpkrUB1SpUmmDhgdqu72srtZitWA8ZhJAnvDnUG35Eo"/>
+</div>
+</div>
+</div>
+</section>
+<!-- Bento Features Grid -->
+<section class="py-24 px-8 bg-surface-container-low">
+<div class="max-w-7xl mx-auto">
+<div class="mb-16">
+<h2 class="text-4xl font-bold tracking-tight mb-4">Professional Tools for the New Era</h2>
+<p class="text-on-surface-variant">Designed to help you stand out in a crowded digital landscape.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 md:grid-rows-2 gap-6 h-auto md:h-[600px]">
+<!-- Main Feature: AI Resume -->
+<div class="md:col-span-2 md:row-span-1 bg-surface-container-lowest rounded-2xl p-8 flex flex-col justify-between group cursor-pointer hover:scale-[1.01] transition-all">
+<div>
+<span class="material-symbols-outlined text-4xl text-primary mb-4" data-icon="psychology">psychology</span>
+<h3 class="text-2xl font-bold mb-2">AI Resume Generator</h3>
+<p class="text-on-surface-variant max-w-md text-sm">Transform your experiences into a compelling narrative with our intelligent curation engine.</p>
+</div>
+<div class="mt-6 flex gap-2">
+<span class="px-3 py-1 rounded-full bg-primary-container text-on-primary-container text-[10px] font-bold uppercase tracking-widest">Smart Mapping</span>
+<span class="px-3 py-1 rounded-full bg-secondary-container text-on-secondary-container text-[10px] font-bold uppercase tracking-widest">ATS Optimized</span>
+</div>
+</div>
+<!-- Portfolio Showcase -->
+<div class="md:col-span-1 md:row-span-2 bg-gradient-to-b from-primary to-primary-dim rounded-2xl p-8 text-on-primary flex flex-col justify-between relative overflow-hidden group">
+<div class="relative z-10">
+<span class="material-symbols-outlined text-4xl mb-4" data-icon="palette">palette</span>
+<h3 class="text-2xl font-bold mb-2">Portfolio Showcase</h3>
+<p class="text-primary-container leading-relaxed">Gallery-grade presentation for your best work. No templates, just pure creativity.</p>
+</div>
+<img class="absolute bottom-0 right-0 w-3/4 opacity-40 translate-y-8 group-hover:translate-y-4 transition-transform" data-alt="abstract artistic composition with translucent layers and soft glowing blues representing a creative digital gallery" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAoU2Zn8-VyNjusrkZBhP3TWPmL_0Kxo-yQP8rn305VesTzf2xmfO3PFXlSWCZtmLmJvodi-T8WteEE1J28mk4nmKR-vONY_tqLuXiy5Yns5cbKc6H_-LTmpSe3tWOjTXdYXmRB4avfMmsz9ZH_8UJG9V66GASF80yoTGRofKG6ksWicDHyQsIIso2tVChata-LjeE6VckdcNE1-1UQled-ptg-NnhhwwttV_0Ckc0CS7fk-NHlWRhNH7BcjbQEZLi7rABzwPzEYL0"/>
+</div>
+<!-- Recruiter Search -->
+<div class="md:col-span-1 md:row-span-1 bg-surface-container-lowest rounded-2xl p-8 flex flex-col justify-center border-t-4 border-tertiary-fixed transition-all">
+<span class="material-symbols-outlined text-3xl text-tertiary mb-3" data-icon="person_search">person_search</span>
+<h3 class="text-xl font-bold mb-2">Smart Recruiter Search</h3>
+<p class="text-on-surface-variant text-sm">Let top companies find you through semantic skill matching.</p>
+</div>
+<!-- Real-time Chat -->
+<div class="md:col-span-1 md:row-span-1 bg-surface-container-lowest rounded-2xl p-8 flex flex-col justify-center transition-all">
+<span class="material-symbols-outlined text-3xl text-secondary mb-3" data-icon="chat">chat</span>
+<h3 class="text-xl font-bold mb-2">Real-time Chat</h3>
+<p class="text-on-surface-variant text-sm">Direct, frictionless communication between talent and opportunity.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Testimonials -->
+<section class="py-32 px-8 overflow-hidden bg-surface">
+<div class="max-w-7xl mx-auto">
+<div class="flex flex-col md:flex-row items-end justify-between mb-20 gap-8">
+<div class="max-w-xl">
+<h2 class="text-5xl font-extrabold tracking-tighter mb-6">Built for the Next Generation</h2>
+<p class="text-lg text-on-surface-variant">Listen to the students and recruiters already shaping the platform's future.</p>
+</div>
+<div class="flex gap-4">
+<button class="w-12 h-12 rounded-full border border-outline-variant flex items-center justify-center hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined" data-icon="arrow_back">arrow_back</span>
+</button>
+<button class="w-12 h-12 rounded-full border border-outline-variant flex items-center justify-center hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<!-- Testimonial 1 -->
+<div class="p-10 rounded-2xl bg-surface-container-lowest shadow-sm border-l-4 border-primary">
+<p class="text-2xl font-medium leading-snug italic text-on-surface mb-10">
+                            "The AI Resume Generator saved me weeks of work. I went from a generic list of bullet points to a narrative that recruiters actually commented on during interviews."
+                        </p>
+<div class="flex items-center gap-4">
+<div class="w-14 h-14 rounded-xl bg-slate-200 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="professional portrait of a young woman with curly hair wearing a blue blazer smiling warmly in a bright office" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDn6BHYt3YaYj0WJ88E0EIE4PKWiNqdIORawA1YhyFoeqOoZ_etNmPCVQ18lJt23CLhMPHBX5vTg18OuS22sOfucPps2zUB_csgxKoiBJD-1QtOy7OHH91CB2IOiTgCXrfOCZp_FHH5u5MOamOlicCvr2tGz_8PdpygtyL7dZApXftoUZl2zZXMopIKTxj3zBCjLCYwqt_I0xZvI9Xbn86Cz0cEecCj6lWiK3QikE4HPmOsx2iHcJ6NNBImvqZie-BrFfT2RjUQja0"/>
+</div>
+<div>
+<h4 class="font-bold text-on-surface">Alex Rivers</h4>
+<p class="text-xs text-on-surface-variant uppercase tracking-widest font-bold">Graduate Designer</p>
+</div>
+</div>
+</div>
+<!-- Testimonial 2 -->
+<div class="p-10 rounded-2xl bg-surface-container-lowest shadow-sm border-l-4 border-secondary">
+<p class="text-2xl font-medium leading-snug italic text-on-surface mb-10">
+                            "Finding talent used to be a filtered mess. With Curator, I can see the projects and the passion instantly. It’s the visual LinkedIn I've always wanted."
+                        </p>
+<div class="flex items-center gap-4">
+<div class="w-14 h-14 rounded-xl bg-slate-200 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="middle-aged man with glasses and a friendly expression in a neutral grey studio setting with professional lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBEte5nRoAekyHtVeuhXGzwlrMeG58k_en-ZTC7-F7W5hcvpz4bUoMGGXLZLkqGzdPzxnKWdw1AoJOAp_Torf4FFomcb0yvZ4FHx5sSdmcL3gkTfo6FCVqSfc67vtEkZUmaMQcRe9MjMw1ouQ73PNJn9E2gqOtc0rjd9y_IyYC9aAXsiLDFvOl2-iOIzwN2Ss1NkYa4HbTo6aMZpnRSFyGL7NHb0zt-FuTJpulSTvRXwUNrSXeUXKeCmr1SZW4p0vTcjkLjDvUs5M8"/>
+</div>
+<div>
+<h4 class="font-bold text-on-surface">Marcus Chen</h4>
+<p class="text-xs text-on-surface-variant uppercase tracking-widest font-bold">Tech Recruiter @ InnovateUI</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Canvas -->
+<section class="py-20 px-8">
+<div class="max-w-7xl mx-auto bg-on-background rounded-3xl p-12 md:p-24 text-center relative overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-tr from-primary/20 via-transparent to-secondary/10 pointer-events-none"></div>
+<h2 class="text-4xl md:text-6xl font-extrabold text-white tracking-tighter mb-8 relative z-10">Ready to curate your path?</h2>
+<p class="text-slate-400 text-lg md:text-xl mb-12 max-w-2xl mx-auto relative z-10">Join 10,000+ students already building their professional identities on The Academic Curator.</p>
+<div class="flex flex-col sm:flex-row justify-center gap-4 relative z-10">
+<button class="px-10 py-5 bg-primary text-on-primary rounded-xl font-bold text-xl hover:scale-105 transition-transform">Get Started Free</button>
+<button class="px-10 py-5 bg-white/10 text-white backdrop-blur-md rounded-xl font-bold text-xl hover:bg-white/20 transition-all">Talk to Sales</button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-12 px-8 flex flex-col md:flex-row justify-between items-center gap-4 bg-slate-50 dark:bg-slate-950">
+<div class="flex flex-col gap-2">
+<div class="text-lg font-bold text-slate-900 dark:text-slate-100">The Academic Curator</div>
+<p class="font-inter text-xs text-slate-500">© 2026 The Academic Curator. Built for the next generation of talent.</p>
+</div>
+<div class="flex flex-wrap justify-center gap-6">
+<a class="font-inter text-xs text-slate-500 hover:underline" href="#">Privacy Policy</a>
+<a class="font-inter text-xs text-slate-500 hover:underline" href="#">Terms of Service</a>
+<a class="font-inter text-xs text-slate-500 hover:underline" href="#">Contact</a>
+<a class="font-inter text-xs text-slate-500 hover:underline" href="#">FAQ</a>
+</div>
+<div class="flex gap-4">
+<a class="text-slate-400 hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined" data-icon="share">share</span></a>
+<a class="text-slate-400 hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined" data-icon="language">language</span></a>
+</div>
+</footer>
+</body></html>

@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  .material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  }
+}
+
+@layer utilities {
+  .aurora-gradient {
+    background: linear-gradient(135deg, #FF7AF5 0%, #7AF7FF 50%, #B4FF9F 100%);
+  }
+  .aurora-text {
+    background: linear-gradient(135deg, #FF7AF5 0%, #7AF7FF 50%, #B4FF9F 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .glass-card {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+  }
+  
+  /* Skeleton class for loaders */
+  .skeleton {
+    @apply bg-gray-300 animate-pulse rounded;
+  }
+}
