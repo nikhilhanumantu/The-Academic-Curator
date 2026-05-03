@@ -16,6 +16,30 @@ The Academic Curator is a comprehensive platform bridging the gap between studen
 - **Connection Management**: Connect with students and manage potential candidates.
 - **Real-Time Communication**: Integrated messaging system to contact students.
 
+## 🔄 System Workflow
+
+```mermaid
+graph TD
+    A[User] -->|Authentication| B(Auth System - JWT)
+    
+    B -->|Role: Student| C[Student Portal]
+    B -->|Role: Recruiter| D[Recruiter Portal]
+    
+    C --> E[Profile Builder]
+    C --> F[AI Resume Generator]
+    E --> G[(MongoDB Database)]
+    F -->|Data + Prompt| H{OpenRouter API}
+    H -->|Generated Resume Content| F
+    F -->|Generate PDF| P[Puppeteer]
+    
+    D --> I[Talent Search & Filters]
+    I --> G
+    D --> J[View Student Profiles & Resumes]
+    
+    C <-->|Real-time Direct Messaging| K(Socket.io Server)
+    D <-->|Real-time Direct Messaging| K
+```
+
 ## 🛠️ Technology Stack
 
 ### Frontend
