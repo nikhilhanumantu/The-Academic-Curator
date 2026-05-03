@@ -75,8 +75,6 @@ The-Academic-Curator/
 │   │   ├── pages/          # Full page views (Student & Recruiter portals)
 │   │   └── assets/         # Static images, styles, and assets
 │   └── package.json        # Frontend dependencies
-├── landingPage.html        # Concept static landing page
-└── chat.html               # Concept static chat interface
 ```
 
 ## 📄 Core Files & Features
