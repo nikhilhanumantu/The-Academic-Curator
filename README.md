@@ -1,8 +1,8 @@
-# The Academic Curator 🎓
+# The Academic Curator 
 
 The Academic Curator is a comprehensive platform bridging the gap between students and recruiters. It empowers students to build professional profiles, generate AI-powered resumes, and connect with potential employers. For recruiters, it offers powerful tools to discover, evaluate, and communicate with top academic talent.
 
-## 🚀 Features
+##  Features
 
 ### For Students
 - **Profile Building**: Create detailed profiles showcasing skills, education, projects, and certifications.
@@ -16,7 +16,7 @@ The Academic Curator is a comprehensive platform bridging the gap between studen
 - **Connection Management**: Connect with students and manage potential candidates.
 - **Real-Time Communication**: Integrated messaging system to contact students.
 
-## 🔄 System Workflow
+##  System Workflow
 
 ```mermaid
 graph TD
@@ -40,7 +40,7 @@ graph TD
     D <-->|Real-time Direct Messaging| K
 ```
 
-## 🛠️ Technology Stack
+##  Technology Stack
 
 ### Frontend
 - **Framework**: React.js with Vite
@@ -59,7 +59,7 @@ graph TD
 - **AI Integration**: OpenRouter API
 - **PDF Generation**: Puppeteer
 
-## 📁 Project Structure
+##  Project Structure
 
 ```text
 The-Academic-Curator/
@@ -77,7 +77,7 @@ The-Academic-Curator/
 │   └── package.json        # Frontend dependencies
 ```
 
-## 📄 Core Files & Features
+##  Core Files & Features
 
 ### Backend Files
 - **`server.js`**: Main entry point for the backend, initializing Express, connecting to MongoDB, setting up Socket.io for real-time chat, and registering API routes.
@@ -96,7 +96,7 @@ The-Academic-Curator/
 - **`src/pages/Chat.jsx`**: A dynamic, real-time messaging interface powered by WebSockets allowing direct communication between recruiters and students.
 - **`src/pages/recruiter/StudentProfileDetail.jsx`**: Detailed view for recruiters to assess a candidate's full portfolio and resume.
 
-## ⚙️ Installation & Setup
+##  Installation & Setup
 
 ### Prerequisites
 - [Node.js](https://nodejs.org/) (v16+ recommended)
@@ -142,7 +142,7 @@ npm run dev
 # Expected Output: Frontend running on http://localhost:5173
 ```
 
-## 🔒 Environment Variables
+##  Environment Variables
 
 | Variable | Location | Description |
 |----------|----------|-------------|
