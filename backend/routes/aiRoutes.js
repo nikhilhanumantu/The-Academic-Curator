@@ -65,7 +65,7 @@ No markdown, no explanation, just the JSON array.
         'X-Title': 'The Academic Curator', // Optional, for OpenRouter rankings
       },
       body: JSON.stringify({
-        model: 'openai/gpt-5.4',
+        model: 'openai/gpt-5.5',
         messages: [{ role: 'user', content: prompt }],
         max_tokens: 300 // Added explicitly to prevent OpenRouter credit limit errors
       })
@@ -135,9 +135,9 @@ Provide a short, direct, and actionable response. If they ask for better phrasin
         'X-Title': 'The Academic Curator',
       },
       body: JSON.stringify({
-        model: 'openai/gpt-5.4',
+        model: 'openai/gpt-5.5',
         messages: [{ role: 'user', content: systemPrompt }],
-        max_tokens: 1000 // Added explicitly to prevent OpenRouter credit limit errors
+        max_tokens: 300 // Added explicitly to prevent OpenRouter credit limit errors
       })
     });
 

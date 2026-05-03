@@ -55,6 +55,25 @@ The-Academic-Curator/
 └── chat.html               # Concept static chat interface
 ```
 
+## 📄 Core Files & Features
+
+### Backend Files
+- **`server.js`**: Main entry point for the backend, initializing Express, connecting to MongoDB, setting up Socket.io for real-time chat, and registering API routes.
+- **`routes/aiRoutes.js`**: Handles integration with the OpenRouter AI API to process and format student information for resume generation.
+- **`routes/authRoutes.js`**: Manages secure user authentication, registration, login, and token generation using JWT.
+- **`routes/studentRoutes.js`**: Contains endpoints for students to create, read, update, and manage their detailed academic and professional profiles.
+- **`routes/resumeRoutes.js`**: Responsible for creating, formatting, and serving PDF resumes generated from student profiles.
+- **`routes/messageRoutes.js` & `connectionRoutes.js`**: Handlers for creating recruiter-student connections and processing real-time direct messages.
+- **`models/*.js`**: Mongoose database schemas defining the structure for `User`, `StudentProfile`, `Recruiter`, `Connection`, and `Message` documents.
+
+### Frontend Files
+- **`src/pages/LandingPage.jsx`**: The primary marketing and entry page showcasing platform capabilities and directing users to relevant portals.
+- **`src/pages/student/ProfileBuilder.jsx`**: A comprehensive, multi-step form for students to input their education, skills, experiences, and projects.
+- **`src/pages/student/ResumeGenerator.jsx`**: Interface where students can preview and generate their AI-powered professional resumes.
+- **`src/pages/recruiter/Search.jsx`**: Advanced search and filtering interface for recruiters to discover matching student talent.
+- **`src/pages/Chat.jsx`**: A dynamic, real-time messaging interface powered by WebSockets allowing direct communication between recruiters and students.
+- **`src/pages/recruiter/StudentProfileDetail.jsx`**: Detailed view for recruiters to assess a candidate's full portfolio and resume.
+
 ## ⚙️ Installation & Setup
 
 ### Prerequisites
